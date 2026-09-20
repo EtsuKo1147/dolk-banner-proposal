@@ -21,6 +21,8 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     await fs.access(target);
   }
   if(!route){
+    assert.equal($('.welcome small').text(),'【非公式・選考課題】');
+    assert.equal($('.welcome strong').text(),'by Koetsu');
     assert.equal($('.store-header .header-demo-note').length,1);
     assert.equal($('.account-links,.utility-links').length,0);
     assert.equal($('.demo-notice').length,0,'No extra notice bar should change the page dimensions');
