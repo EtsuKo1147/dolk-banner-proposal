@@ -6,8 +6,8 @@ a{color:inherit}
 .storefront{--navy:#101d48;--blue:#263664;--side:clamp(170px,12.4vw,250px);font-size:clamp(11px,.9vw,16px);background:white}
 .store-header{height:clamp(65px,4.3vw,87px);display:flex;background:var(--navy);color:white}
 .welcome{width:var(--side);flex-shrink:0;padding:7px 15px 0 25px;background:linear-gradient(65deg,transparent 45%,#263661 46%,#162757 77%,transparent 78%);border-inline:1px solid #495574;display:flex;flex-direction:column;justify-content:space-between;padding-bottom:13px}
-.welcome small{font-size:clamp(9px,.65vw,12px);font-weight:400;letter-spacing:.02em;white-space:nowrap}
-.welcome strong{text-align:right;font-size:clamp(12px,1vw,18px);font-weight:400;letter-spacing:.03em}
+.welcome small{font-size:clamp(11px,.85vw,15px);font-weight:400;letter-spacing:.02em;white-space:nowrap}
+.welcome strong{text-align:right;font-size:clamp(10px,.75vw,14px);font-weight:400;letter-spacing:.03em}
 .header-main{position:relative;flex:1;padding:7px 2%}
 .header-main>p{margin:0 0 6px;color:#a7acc0;font-size:.9em}
 .header-main>img{width:clamp(165px,11.5vw,230px);height:auto}
