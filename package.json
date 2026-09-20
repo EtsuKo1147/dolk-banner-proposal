@@ -1,0 +1,18 @@
+{
+  "name": "dolk-banner-proposal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "astro": "^7.3.3"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2",
+    "sharp": "^0.35.4"
+  }
+}

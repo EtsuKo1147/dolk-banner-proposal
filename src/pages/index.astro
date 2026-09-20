@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+import '../styles/home.css';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+const url = (path:string) => base + path;
+const categories = ['ドール','ブラインドドール','パーツ','ウィッグ','アイ','ドレス','シューズ','アクセサリー','ツール','その他'];
+const socialNames = ['X','facebook','LINE','Instagram','Youtube','X(EN)','rednote','weibo'];
+const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:'Happy Fullset'}];
+---
+<Base title="DOLK STATION｜バナー掲載イメージ" bodyClass="storefront">
+  <header class="store-header">
+    <div class="welcome"><small>いらっしゃいませ</small><strong>ゲスト　様</strong></div>
+    <div class="header-main"><p>ドール・ドール用品専門通販サイト - DOLKSTATION(ドルクステーション)</p><img src={url('images/site/Logo.png')} alt="DOLK STATION" width="225" height="34" /><div class="account-links">新規会員登録 ｜ ログイン ｜ マイページ</div><div class="utility-links">◧ 初めての方へ　｜　ⓘ ヘルプ　｜　🛒 ショッピングカート (0点) ¥0　 <span>カートを見る ›</span></div></div>
+  </header>
+  <div class="search-row"><div class="search-display">検索ワードを入力</div><span class="search-category">全カテゴリー　 ▾</span><span class="search-submit">検索</span><span class="search-links">▤ 一覧リスト　 │　 ♥ ほしいものリスト</span></div>
+  <div class="campaigns" aria-label="キャンペーン掲載イメージ">
+    {['banner_img20260915202422.jpg','banner_img20260915202408.jpg'].map(file=><div class="campaign-strip">{Array.from({length:6},()=> <img src={url('images/site/'+file)} alt="9月23日まで・キャンペーン" />)}</div>)}
+  </div>
+  <div class="store-layout">
+    <aside class="store-sidebar">
+      <div class="login-box"><div>会員IDまたはメールアドレス</div><div>パスワード</div><strong>ログイン　 ›</strong><u>ID・パスワードを忘れた方</u></div>
+      <h2>カテゴリー <small>検索</small></h2>
+      {categories.map(category=><div class="category-row">{category}<span>›</span></div>)}
+      <h2 class="teal">メーカー・クリエイター <small>検索</small></h2>
+      {['メーカー名','クリエイター名','アイテム','生産国'].map(item=><div class="category-row teal-text">{item}<span>›</span></div>)}
+      <div class="side-list"><span>一覧を見る ›</span></div>
+      {['♧　初めての方へ','ⓘ　ヘルプ','♟　新規会員登録'].map(item=><div class="help-row">{item}<span>›</span></div>)}
+      <div class="social-panel"><h3>公式SNSアカウント</h3><div class="social-grid">{site.social.slice(0,5).map((item,i)=><div><small>{socialNames[i]}</small><img src={url(item.src!)} alt={socialNames[i]} /></div>)}</div></div>
+      <div class="social-panel"><h3>海外公式SNSアカウント</h3><div class="social-grid">{site.social.slice(5,8).map((item,i)=><div><small>{socialNames[i+5]}</small><img src={url(item.src!)} alt={socialNames[i+5]} /></div>)}</div></div>
+      <div class="side-video"><img src={url('images/site/dollnuma_title.jpg')} alt="ドル沼 CH" />{site.videos.map(img=><img src={url(img.src!)} alt="ドル沼 CH 第217回" loading="lazy" />)}<small>第217回　2026.09.11配信</small><p>#ドール #アイドール 可愛いを探す旅…！I・Dollさん</p></div>
+    </aside>
+    <main class="store-main">
+      <section class="top-showcase" aria-label="最新のお知らせと特集">
+        <div class="showcase-main">
+          <div class="main-hero"><div class="hero-peek"><img src={url(site.thumbnails[0].src!)} alt="ドールメイクツール10点セット" /></div><img class="hero-center" src={url(site.thumbnails[1].src!)} alt="グリッドマン ユニバース 宝多六花 キャストドール化決定" fetchpriority="high" /><div class="hero-peek"><img src={url(site.thumbnails[2].src!)} alt="ウマ娘 ライスシャワー" /></div></div>
+          <div class="carousel-dots" aria-hidden="true">{Array.from({length:13},(_,i)=><span class:list={{active:i===7}} />)}</div>
+          <div class="thumbnail-strip"><span class="static-arrow" aria-hidden="true">‹</span>{site.thumbnails.map((item,i)=><article class:list={['thumbnail',{selected:i===1}]}><div class="thumbnail-label">{item.category}</div><img src={url(item.src!)} alt="" /><p>{item.text}</p></article>)}<span class="static-arrow" aria-hidden="true">›</span></div>
+          <div class="latest-news"><div class="news-label">最新のお知らせ<span>一覧　 ›</span></div><div class="news-lines">{site.news.map(item=><div><time>{item.date}</time><b>»</b><span>{item.text}</span></div>)}</div></div>
+        </div>
+        <aside class="showcase-side">{site.side.map((item,i)=><img src={url(item.src!)} alt={['ドル沼チャンネル','オーナーズフォト','夢みる小悪魔 Miss Kitty','NOIR DOLL'][i]} />)}</aside>
+      </section>
+      <section class="banner-grid" aria-label="商品特集バナー">
+        {products.map(p=><a class="proposal-banner" href={url(p.slug+'/')} aria-label={`${p.name} の特設ページを見る`}><picture><source media="(max-width: 700px)" srcset={url(`images/banners/${p.slug}-1080x1080.png`)} /><img src={url(`images/banners/${p.slug}-730x135.png`)} width="730" height="135" alt={`${p.name} バナー差し替え用`} /></picture><span class="proposal-caption">{p.name} <span>特設ページへ ›</span></span></a>)}
+        {site.banners.map((item,i)=><div class="original-banner"><img src={url(item.src!)} width="730" height="135" alt={`DOLK 商品特集 ${i+1}`} loading="lazy" /></div>)}
+      </section>
+    </main>
+  </div>
+  <section class="history"><h2>▣ 閲覧履歴 <span>履歴を消す</span></h2><div>現在閲覧履歴はありません。</div></section>
+  <footer class="store-footer">
+    <div class="footer-content"><div class="footer-category"><strong>商品を探す</strong>{categories.map(item=><span>{item}</span>)}</div><div class="footer-tools"><div><span>メーカー名 ⌃</span><span>おすすめアイテム ⌃</span><span>最新リリース ⌃</span><p>♥ ほしいものリスト　　 │　 ▤ 一覧リスト</p></div><div class="footer-social">{site.social.slice(0,5).map((item,i)=><img src={url(item.src!)} alt={socialNames[i]} loading="lazy" />)}</div><b>🛒 ショッピングカート　 (0点) ¥0　 <small>カートを見る ›</small></b></div><div class="footer-support"><div><strong>お客様サポート</strong><p>› 初めての方へ</p><p>› 新規会員登録</p></div><div><p><span>お買い物ガイド</span> ヘルプ　　 ご注文について　　 お支払い方法について　　 配送・送料について　　 よくあるご質問</p><p><span>会員メニュー</span> 会員ログイン　　 マイページ　　 ID・パスワードを忘れた方　　 ポイントについて</p><p><span>店舗情報</span> DOLK 東京店　　 DOLK 大阪店　　 DOLK ラジオ会館店</p></div></div></div>
+    <div class="footer-banners"><span>‹</span>{site.footer.map(item=><img src={url(item.src!)} alt="DOLK キャラクタードール" loading="lazy" />)}<span>›</span></div>
+    <div class="copyright"><img src={url('images/site/Logo.png')} alt="DOLK STATION" loading="lazy" /><span>© DOLK STATION / Vodaless,Inc. All rights reserved.</span><span class="legal">特定商取引法表記　 個人情報保護方針　 ご利用規約　 採用情報　 会社概要</span></div>
+    <p class="unofficial-note">選考課題として制作した非公式の掲載イメージです。掲載画像・ロゴの権利は各権利者に帰属します。</p>
+  </footer>
+  <div class="language-display" aria-hidden="true">◎ Language</div>
+</Base>

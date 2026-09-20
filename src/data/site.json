@@ -1,0 +1,358 @@
+{
+  "hero": [
+    {
+      "source": "/ReUp/Banner/banner_img20250124185012.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124185012.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260821190552.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260821190552.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260805140321.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260805140321.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260910175326.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260910175326.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260915202004.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260915202004.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260917163329.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260917163329.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260917163617.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260917163617.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260622191120.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260622191120.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260415120749.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260415120749.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20251125200402.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20251125200402.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250307135515.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250307135515.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124211523.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124211523.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124185028.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124185028.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124185012.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124185012.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260821190552.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260821190552.jpg"
+    }
+  ],
+  "thumbnails": [
+    {
+      "source": "/ReUp/Banner/banner_img20260622191120.jpg",
+      "category": "DOLK SELECT",
+      "text": "ドールメイクに必要な道具を詰め込んだ、ツール10点セットが新登場！",
+      "src": "images/site/banner_img20260622191120.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260415120749.jpg",
+      "category": "キャラクタードール",
+      "text": "『グリッドマンユニバース』宝多六花のキャストドール化が決定！",
+      "src": "images/site/banner_img20260415120749.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20251125200402.jpg",
+      "category": "キャラクタードール",
+      "text": "『ウマ娘 プリティーダービー』ライスシャワーがドール化決定！",
+      "src": "images/site/banner_img20251125200402.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250307135515.jpg",
+      "category": "キャラクタードール",
+      "text": "イラストレーターrurudo 氏による悪魔っ子『イヴ』がドール化決定!",
+      "src": "images/site/banner_img20250307135515.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124211523.jpg",
+      "category": "キャラクタードール",
+      "text": "『結月ゆかり』アニメスタイルのドール化決定！",
+      "src": "images/site/banner_img20250124211523.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124185028.jpg",
+      "category": "キャラクタードール",
+      "text": "刀剣乱舞オンラインより『山姥切国広』のキャストドール化が決定！",
+      "src": "images/site/banner_img20250124185028.jpg"
+    }
+  ],
+  "side": [
+    {
+      "source": "/ReUp/Banner/banner_img20250124184613.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124184613.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124184701.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124184701.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124184810.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124184810.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250124184850.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250124184850.jpg"
+    }
+  ],
+  "banners": [
+    {
+      "source": "/ReUp/Banner/banner_img20260820192321.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260820192321.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260805140356.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260805140356.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260910175411.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260910175411.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260917163707.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260917163707.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260917205813.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260917205813.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260916201617.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260916201617.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260917164149.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260917164149.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260917204210.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260917204210.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260910210731.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260910210731.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260911164653.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260911164653.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260904124700.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260904124700.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260904135832.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260904135832.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260904135845.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260904135845.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20260828134310.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20260828134310.jpg"
+    }
+  ],
+  "footer": [
+    {
+      "source": "/ReUp/Banner/banner_img20251212131606.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20251212131606.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250620175425.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250620175425.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20250616125127.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20250616125127.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20240529215116.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20240529215116.jpg"
+    },
+    {
+      "source": "/ReUp/Banner/banner_img20240529215027.jpg",
+      "alt": "",
+      "src": "images/site/banner_img20240529215027.jpg"
+    }
+  ],
+  "social": [
+    {
+      "source": "/img/SideSns_x.png",
+      "alt": "",
+      "src": "images/site/SideSns_x.png"
+    },
+    {
+      "source": "/img/SideSns_facebook.png",
+      "alt": "",
+      "src": "images/site/SideSns_facebook.png"
+    },
+    {
+      "source": "/img/SideSns_LINE.png",
+      "alt": "",
+      "src": "images/site/SideSns_LINE.png"
+    },
+    {
+      "source": "/img/SideSns_Instagram.png",
+      "alt": "",
+      "src": "images/site/SideSns_Instagram.png"
+    },
+    {
+      "source": "/img/SideSns_Youtube.png",
+      "alt": "",
+      "src": "images/site/SideSns_Youtube.png"
+    },
+    {
+      "source": "/img/SideSns_Xen.png",
+      "alt": "",
+      "src": "images/site/SideSns_Xen.png"
+    },
+    {
+      "source": "/img/SideSns_rednote.png",
+      "alt": "",
+      "src": "images/site/SideSns_rednote.png"
+    },
+    {
+      "source": "/img/SideSns_weibo.png",
+      "alt": "",
+      "src": "images/site/SideSns_weibo.png"
+    }
+  ],
+  "videos": [
+    {
+      "source": "https://i.ytimg.com/vi/-1dEzCbfBW8/mqdefault.jpg",
+      "alt": "",
+      "src": "images/site/mqdefault.jpg"
+    }
+  ],
+  "news": [
+    {
+      "date": "2026.09.10",
+      "text": "DOLK池袋店のオープン日が、10月1日(木)に決定いたしました。"
+    },
+    {
+      "date": "2026.08.27",
+      "text": "2026年秋、DOLKの新店舗が池袋にグランドオープンいたします。"
+    },
+    {
+      "date": "2026.08.27",
+      "text": "お取り寄せ商品のお届け時期（納期）をご確認いただける新機能をリリースいたしました。"
+    }
+  ],
+  "assets": {
+    "/ReUp/Banner/banner_img20260821190552.jpg": "images/site/banner_img20260821190552.jpg",
+    "/ReUp/Banner/banner_img20260805140321.jpg": "images/site/banner_img20260805140321.jpg",
+    "/ReUp/Banner/banner_img20260910175326.jpg": "images/site/banner_img20260910175326.jpg",
+    "/ReUp/Banner/banner_img20260915202004.jpg": "images/site/banner_img20260915202004.jpg",
+    "/ReUp/Banner/banner_img20250124185012.jpg": "images/site/banner_img20250124185012.jpg",
+    "/ReUp/Banner/banner_img20260917163329.jpg": "images/site/banner_img20260917163329.jpg",
+    "/ReUp/Banner/banner_img20260917163617.jpg": "images/site/banner_img20260917163617.jpg",
+    "/ReUp/Banner/banner_img20260415120749.jpg": "images/site/banner_img20260415120749.jpg",
+    "/ReUp/Banner/banner_img20251125200402.jpg": "images/site/banner_img20251125200402.jpg",
+    "/ReUp/Banner/banner_img20260622191120.jpg": "images/site/banner_img20260622191120.jpg",
+    "/ReUp/Banner/banner_img20250307135515.jpg": "images/site/banner_img20250307135515.jpg",
+    "/ReUp/Banner/banner_img20250124211523.jpg": "images/site/banner_img20250124211523.jpg",
+    "/ReUp/Banner/banner_img20250124185028.jpg": "images/site/banner_img20250124185028.jpg",
+    "/ReUp/Banner/banner_img20250124184613.jpg": "images/site/banner_img20250124184613.jpg",
+    "/ReUp/Banner/banner_img20250124184701.jpg": "images/site/banner_img20250124184701.jpg",
+    "/ReUp/Banner/banner_img20260820192321.jpg": "images/site/banner_img20260820192321.jpg",
+    "/ReUp/Banner/banner_img20250124184810.jpg": "images/site/banner_img20250124184810.jpg",
+    "/ReUp/Banner/banner_img20250124184850.jpg": "images/site/banner_img20250124184850.jpg",
+    "/ReUp/Banner/banner_img20260805140356.jpg": "images/site/banner_img20260805140356.jpg",
+    "/ReUp/Banner/banner_img20260917163707.jpg": "images/site/banner_img20260917163707.jpg",
+    "/ReUp/Banner/banner_img20260910175411.jpg": "images/site/banner_img20260910175411.jpg",
+    "/ReUp/Banner/banner_img20260917205813.jpg": "images/site/banner_img20260917205813.jpg",
+    "/ReUp/Banner/banner_img20260916201617.jpg": "images/site/banner_img20260916201617.jpg",
+    "/ReUp/Banner/banner_img20260917204210.jpg": "images/site/banner_img20260917204210.jpg",
+    "/ReUp/Banner/banner_img20260917164149.jpg": "images/site/banner_img20260917164149.jpg",
+    "/ReUp/Banner/banner_img20260910210731.jpg": "images/site/banner_img20260910210731.jpg",
+    "/ReUp/Banner/banner_img20260911164653.jpg": "images/site/banner_img20260911164653.jpg",
+    "/ReUp/Banner/banner_img20260904135832.jpg": "images/site/banner_img20260904135832.jpg",
+    "/ReUp/Banner/banner_img20260904124700.jpg": "images/site/banner_img20260904124700.jpg",
+    "/ReUp/Banner/banner_img20260828134310.jpg": "images/site/banner_img20260828134310.jpg",
+    "/ReUp/Banner/banner_img20260904135845.jpg": "images/site/banner_img20260904135845.jpg",
+    "/ReUp/Banner/banner_img20251212131606.jpg": "images/site/banner_img20251212131606.jpg",
+    "/ReUp/Banner/banner_img20250620175425.jpg": "images/site/banner_img20250620175425.jpg",
+    "/ReUp/Banner/banner_img20250616125127.jpg": "images/site/banner_img20250616125127.jpg",
+    "/ReUp/Banner/banner_img20240529215027.jpg": "images/site/banner_img20240529215027.jpg",
+    "/ReUp/Banner/banner_img20240529215116.jpg": "images/site/banner_img20240529215116.jpg",
+    "/img/SideSns_Instagram.png": "images/site/SideSns_Instagram.png",
+    "/img/SideSns_Xen.png": "images/site/SideSns_Xen.png",
+    "/img/SideSns_x.png": "images/site/SideSns_x.png",
+    "/img/SideSns_LINE.png": "images/site/SideSns_LINE.png",
+    "/img/SideSns_facebook.png": "images/site/SideSns_facebook.png",
+    "/img/SideSns_Youtube.png": "images/site/SideSns_Youtube.png",
+    "/img/SideSns_rednote.png": "images/site/SideSns_rednote.png",
+    "/img/SideSns_weibo.png": "images/site/SideSns_weibo.png",
+    "https://i.ytimg.com/vi/-1dEzCbfBW8/mqdefault.jpg": "images/site/mqdefault.jpg",
+    "/img/Logo.png": "images/site/Logo.png",
+    "/img/dollnuma_title.jpg": "images/site/dollnuma_title.jpg",
+    "/ReUp/Banner/banner_img20260915202422.jpg": "images/site/banner_img20260915202422.jpg",
+    "/ReUp/Banner/banner_img20260915202408.jpg": "images/site/banner_img20260915202408.jpg",
+    "/pages/saihito/img/index/main_bg01.png": "images/site/main_bg01.png",
+    "/pages/saihito/img/index/main_bg02.png": "images/site/main_bg02.png",
+    "/pages/saihito/img/index/introduction_bg01.png": "images/site/introduction_bg01.png",
+    "/pages/saihito/img/index/introduction_bg02.png": "images/site/introduction_bg02.png",
+    "/pages/saihito/img/index/about_bg01.png": "images/site/about_bg01.png",
+    "/pages/saihito/img/index/about_bg02.png": "images/site/about_bg02.png"
+  }
+}

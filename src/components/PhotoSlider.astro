@@ -1,0 +1,8 @@
+---
+const { photos, label, positions = [], hero = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+---
+<div class:list={['photo-slider',{'hero-slider':hero}]} data-slider data-hero={hero ? 'true' : 'false'} role="region" aria-roledescription="カルーセル" aria-label={label}>
+  <div class="slides">{photos.map((photo:string,i:number)=><div class:list={['slide',{'is-active':i===0}]} aria-hidden={i!==0}><img src={base+photo} alt={`${label} ${i+1}`} loading={hero && i===0 ? 'eager' : 'lazy'} fetchpriority={hero && i===0 ? 'high' : 'auto'} style={`object-position:${positions[i] || '50% 30%'}`} /></div>)}</div>
+  <div class="slider-controls"><button type="button" data-prev aria-label="前の写真">‹</button><div class="slider-dots">{photos.map((_:string,i:number)=><button type="button" data-slide={i} class:list={{'is-active':i===0}} aria-label={`写真 ${i+1} を表示`} aria-pressed={i===0} />)}</div><button type="button" data-next aria-label="次の写真">›</button><button class="slider-pause" type="button" data-pause aria-label="自動切り替えを停止">Ⅱ</button></div>
+</div>
