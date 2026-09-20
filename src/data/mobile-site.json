@@ -1,0 +1,74 @@
+{
+  "header": [
+    "images/site/mobile/to_top_menu.png",
+    "images/site/mobile/logo_01_new.png",
+    "images/site/mobile/wants.png",
+    "images/site/mobile/cart_on.png"
+  ],
+  "shortcuts": [
+    {
+      "src": "images/site/mobile/g_01.png",
+      "alt": "新着ドール"
+    },
+    {
+      "src": "images/site/mobile/g_02.png",
+      "alt": "最新ニュース"
+    },
+    {
+      "src": "images/site/mobile/g_03.png",
+      "alt": "商品を探す"
+    },
+    {
+      "src": "images/site/mobile/g_04.png",
+      "alt": "マイドルク"
+    }
+  ],
+  "hero": "images/site/mobile/banner_img20260820191037.jpg",
+  "ticker": [
+    {
+      "src": "images/site/mobile/banner_img20260820191037.jpg",
+      "text": "武闘派令嬢スカーレット、8/28(金)19時受注開始！"
+    },
+    {
+      "src": "images/site/mobile/banner_img20260805140429.jpg",
+      "text": "篠澤 広 キャストドール、待望の再受注決定！"
+    },
+    {
+      "src": "images/site/mobile/banner_img20260910175441.jpg",
+      "text": "DOLK池袋店のオープン日が、10月1日(木)に決定！"
+    }
+  ],
+  "topicsHeading": "images/site/mobile/top_03.jpg",
+  "topics": [
+    "images/site/mobile/banner_img20260820192517.jpg",
+    "images/site/mobile/banner_img20260805140602.jpg",
+    "images/site/mobile/banner_img20260910175536.jpg",
+    "images/site/mobile/banner_img20260915202546.jpg",
+    "images/site/mobile/banner_img20260918180121.jpg",
+    "images/site/mobile/banner_img20260917164017.jpg",
+    "images/site/mobile/banner_img20260917210028.jpg",
+    "images/site/mobile/banner_img20260916201744.jpg",
+    "images/site/mobile/banner_img20260917210039.jpg",
+    "images/site/mobile/banner_img20260910210527.jpg",
+    "images/site/mobile/banner_img20260911164750.jpg",
+    "images/site/mobile/banner_img20260904125818.jpg",
+    "images/site/mobile/banner_img20260904135802.jpg",
+    "images/site/mobile/banner_img20260904135749.jpg",
+    "images/site/mobile/banner_img20260828134359.jpg",
+    "images/site/mobile/banner_img20260826114530.jpg",
+    "images/site/mobile/banner_img20260826114449.jpg",
+    "images/site/mobile/banner_img20260826114355.jpg",
+    "images/site/mobile/banner_img20260622191456.jpg"
+  ],
+  "campaignHeading": "images/site/mobile/top_10.jpg",
+  "campaigns": [
+    "images/site/mobile/banner_img20260917204210.jpg",
+    "images/site/mobile/banner_img20250610191729.jpg",
+    "images/site/mobile/banner_img20260528193559.jpg"
+  ],
+  "releaseHeading": "images/site/mobile/top_14.jpg",
+  "release": {
+    "src": "images/site/mobile/banner_img20260807120900.jpg",
+    "text": "70cm級アニメ造形ドール『White』が登場。美麗メイクつきフルセットは数量限定！お得な受注期間は9/23(水/祝)まで。"
+  }
+}

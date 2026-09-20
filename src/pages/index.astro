@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import site from '../data/site.json';
+import mobile from '../data/mobile-site.json';
 import '../styles/home.css';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
 const url = (path:string) => base + path;
@@ -9,6 +10,12 @@ const socialNames = ['X','facebook','LINE','Instagram','Youtube','X(EN)','rednot
 const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:'Happy Fullset'}];
 ---
 <Base title="DOLK STATION｜バナー掲載イメージ" bodyClass="storefront">
+  <header class="mobile-header mobile-only" aria-label="DOLK モバイルヘッダー">
+    <img class="mobile-menu" src={url(mobile.header[0])} alt="メニュー（掲載イメージ）" width="42" height="35" />
+    <img class="mobile-logo" src={url(mobile.header[1])} alt="DOLK" width="146" height="34" />
+    <div class="mobile-utilities"><img src={url(mobile.header[2])} alt="ほしいものリスト（掲載イメージ）" width="85" height="50" /><img src={url(mobile.header[3])} alt="カート（掲載イメージ）" width="85" height="50" /></div>
+  </header>
+  <div class="mobile-shortcuts mobile-only" aria-label="モバイルメニュー掲載イメージ">{mobile.shortcuts.map(item=><img src={url(item.src)} alt={item.alt} width="180" height="90" />)}</div>
   <header class="store-header">
     <div class="welcome"><small>いらっしゃいませ</small><strong>ゲスト　様</strong></div>
     <div class="header-main"><p>ドール・ドール用品専門通販サイト - DOLKSTATION(ドルクステーション)</p><img src={url('images/site/Logo.png')} alt="DOLK STATION" width="225" height="34" /><div class="account-links">新規会員登録 ｜ ログイン ｜ マイページ</div><div class="utility-links">◧ 初めての方へ　｜　ⓘ ヘルプ　｜　🛒 ショッピングカート (0点) ¥0　 <span>カートを見る ›</span></div></div>
@@ -31,6 +38,10 @@ const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:
       <div class="side-video"><img src={url('images/site/dollnuma_title.jpg')} alt="ドル沼 CH" />{site.videos.map(img=><img src={url(img.src!)} alt="ドル沼 CH 第217回" loading="lazy" />)}<small>第217回　2026.09.11配信</small><p>#ドール #アイドール 可愛いを探す旅…！I・Dollさん</p></div>
     </aside>
     <main class="store-main">
+      <section class="mobile-showcase mobile-only" aria-label="モバイルのメイン特集">
+        <img class="mobile-hero" src={url(mobile.hero)} width="750" height="750" alt="スカーレット・エル・ヴァンディミオン キャストドール 期間限定で受注開始" fetchpriority="high" />
+        <div class="mobile-ticker">{mobile.ticker.map(item=><div class="mobile-ticker-item"><img src={url(item.src)} width="74" height="74" alt="" /><p>{item.text}</p></div>)}</div>
+      </section>
       <section class="top-showcase" aria-label="最新のお知らせと特集">
         <div class="showcase-main">
           <div class="main-hero"><div class="hero-peek"><img src={url(site.thumbnails[0].src!)} alt="ドールメイクツール10点セット" /></div><img class="hero-center" src={url(site.thumbnails[1].src!)} alt="グリッドマン ユニバース 宝多六花 キャストドール化決定" fetchpriority="high" /><div class="hero-peek"><img src={url(site.thumbnails[2].src!)} alt="ウマ娘 ライスシャワー" /></div></div>
@@ -40,9 +51,20 @@ const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:
         </div>
         <aside class="showcase-side">{site.side.map((item,i)=><img src={url(item.src!)} alt={['ドル沼チャンネル','オーナーズフォト','夢みる小悪魔 Miss Kitty','NOIR DOLL'][i]} />)}</aside>
       </section>
+      <h2 class="mobile-section-heading mobile-topics-heading mobile-only"><img src={url(mobile.topicsHeading)} width="750" height="27" alt="最新トピックス NEW TOPICS" /></h2>
       <section class="banner-grid" aria-label="商品特集バナー">
         {products.map(p=><a class="proposal-banner" href={url(p.slug+'/')} aria-label={`${p.name} の特設ページを見る`}><picture><source media="(max-width: 700px)" srcset={url(`images/banners/${p.slug}-1080x1080.png`)} /><img src={url(`images/banners/${p.slug}-730x135.png`)} width="730" height="135" alt={`${p.name} バナー差し替え用`} /></picture><span class="proposal-caption">{p.name} <span>特設ページへ ›</span></span></a>)}
         {site.banners.map((item,i)=><div class="original-banner"><img src={url(item.src!)} width="730" height="135" alt={`DOLK 商品特集 ${i+1}`} loading="lazy" /></div>)}
+        {mobile.topics.map((src,i)=><div class="mobile-topic mobile-only"><img src={url(src)} width="362" height="362" alt={`DOLK モバイル商品特集 ${i+1}`} loading="lazy" /></div>)}
+      </section>
+      <section class="mobile-campaign-section mobile-only" aria-label="最新企画・キャンペーン情報">
+        <h2 class="mobile-section-heading"><img src={url(mobile.campaignHeading)} width="750" height="27" alt="最新企画・キャンペーン情報 CAMPAIGN INFO" loading="lazy" /></h2>
+        <div class="mobile-campaign-banners">{mobile.campaigns.map((src,i)=><img src={url(src)} width="730" height="135" alt={['RUCY COTTON CANDY','ドール基本ツール9点セット','オーナーズフォト'][i]} loading="lazy" />)}</div>
+      </section>
+      <section class="mobile-release mobile-only" aria-label="最新リリース情報">
+        <h2><img src={url(mobile.releaseHeading)} width="750" height="100" alt="最新リリース情報 NEW RELEASE INFORMATION" loading="lazy" /></h2>
+        <img class="mobile-release-image" src={url(mobile.release.src)} width="710" height="504" alt="DOLL ZONE White New Release 最大15%OFF" loading="lazy" />
+        <div class="mobile-release-copy"><span>期間限定受注</span><p class="release-maker">DOLL ZONE</p><p>{mobile.release.text}</p></div>
       </section>
     </main>
   </div>

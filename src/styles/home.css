@@ -114,6 +114,7 @@ a{color:inherit}
 .legal{margin-left:auto}
 .unofficial-note{margin:0;background:#080b17;color:#aaa;text-align:center;font-size:11px;padding:10px;line-height:1.7}
 .language-display{position:fixed;right:16px;bottom:15px;background:#f48b19;color:white;padding:8px 12px;border-radius:6px;font-size:13px;font-weight:bold;z-index:5;box-shadow:0 1px 4px #0002}
+.mobile-only{display:none}
 
 @media(min-width:1800px){.search-row{height:60px}
 .search-display,.search-category,.search-submit{height:43px;padding-top:10px}
@@ -147,21 +148,39 @@ a{color:inherit}
 }
 
 @media(max-width:700px){.storefront{font-size:12px}
-.store-header{height:73px}
+.store-header,.search-row,.top-showcase{display:none}
+.mobile-only{display:block}
+.mobile-header{position:sticky;top:0;z-index:10;height:max(54px,13.333vw);background:#0a1946;display:flex;align-items:center;justify-content:center}
+.mobile-menu{position:absolute;left:4%;width:5.6%;height:auto}
+.mobile-logo{width:19.467%;height:auto}
+.mobile-utilities{position:absolute;right:3%;width:24%;display:flex;align-items:center}
+.mobile-utilities img{width:50%;height:auto}
+.mobile-utilities img+img{border-left:1px dotted #63708d}
+.mobile-shortcuts{display:flex;background:#0a1946;padding:0 2% 1%;align-items:center}
+.mobile-shortcuts img{width:25%;height:auto}
 .welcome,.store-sidebar,.utility-links,.showcase-side{display:none}
 .header-main{padding:11px 16px}
 .header-main>p{font-size:8px;margin-bottom:8px}
 .header-main>img{width:165px}
 .account-links{top:46px;font-size:9px;right:12px}
-.search-row{padding:7px 12px;height:44px}
 .search-display{flex:1;font-size:11px}
 .search-category{font-size:10px}
 .search-submit{font-size:12px}
 .search-links{display:none}
-.campaign-strip{height:24px}
+.campaign-strip{width:100%;height:auto}
+.campaign-strip img{width:100%;height:auto;max-width:100%;aspect-ratio:750/80}
+.campaign-strip img:not(:first-child){display:none}
 .store-layout{display:block;padding:0}
-.store-main{padding-top:15px}
-.top-showcase{display:block}
+.store-main{padding-top:0}
+.mobile-hero{width:100%;height:auto;aspect-ratio:1}
+.mobile-ticker{display:flex;overflow:hidden;border-bottom:1px solid #eee;gap:3%;padding:10px 0;color:#777}
+.mobile-ticker-item{display:flex;align-items:center;gap:8px;flex:0 0 65%;min-width:0;border-right:1px dashed #ddd;padding:4px 8px}
+.mobile-ticker-item:first-child{margin-left:20%;border-top:3px solid #dedcec;padding-top:1px}
+.mobile-ticker-item img{width:15%;height:auto;aspect-ratio:1}
+.mobile-ticker-item p{font-size:clamp(11px,3.4vw,21px);font-weight:400;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.mobile-section-heading{margin:0 0 6%;line-height:0}
+.mobile-section-heading img{width:100%;height:auto}
+.mobile-topics-heading{margin-top:10%}
 .main-hero{grid-template-columns:6% 80% 6%;gap:4%}
 .hero-center,.hero-peek{border-radius:8px}
 .carousel-dots{height:32px;gap:8px}
@@ -177,12 +196,23 @@ a{color:inherit}
 .news-lines{max-height:74px}
 .news-lines>div{padding:6px;gap:7px;font-size:10px}
 .news-lines time{display:none}
-.banner-grid{margin:20px 12px 24px;gap:10px;grid-template-columns:1fr 1fr}
-.banner-grid .proposal-banner img{aspect-ratio:1}
+.banner-grid{margin:0 1.067% 12%;gap:4px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.banner-grid .proposal-banner img,.banner-grid .mobile-topic img{aspect-ratio:1;object-fit:contain}
 .proposal-banner .proposal-caption{font-size:11px;inset:auto 10px 12px;display:block}
 .proposal-caption>span{display:block;margin-top:4px}
-.banner-grid .original-banner{grid-column:1/-1}
+.banner-grid .original-banner{display:none}
 .banner-grid img{border-radius:7px}
+.mobile-campaign-banners{display:grid;gap:5px;padding:0 1.333%}
+.mobile-campaign-banners img{width:100%;height:auto;border-radius:8px}
+.mobile-campaign-section{margin-bottom:9%}
+.mobile-release{background:#ebebf7;padding-bottom:24px}
+.mobile-release h2{margin:0 0 6%;line-height:0}
+.mobile-release h2 img{width:100%;height:auto}
+.mobile-release-image{width:94.667%;height:auto;margin:0 auto;border-radius:9px}
+.mobile-release-copy{padding:12px 5% 0;text-align:center;font-size:13px;line-height:1.8;color:#555}
+.mobile-release-copy>span{display:inline-block;background:#5c4fab;color:white;font-size:14px;letter-spacing:.1em;padding:2px 12px}
+.mobile-release-copy p{margin:10px 0 0}
+.mobile-release-copy .release-maker{color:#b49a47;letter-spacing:.06em}
 .history>div{height:80px;font-size:11px}
 .history h2{font-size:13px}
 .footer-content{padding:18px 15px}
