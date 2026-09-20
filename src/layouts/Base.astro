@@ -1,5 +1,6 @@
 ---
-const { title, description = 'DOLK 選考課題・非公式の掲載イメージ', bodyClass = '' } = Astro.props;
+import DemoNotice from '../components/DemoNotice.astro';
+const { title, description = 'DOLK 選考課題・非公式の掲載イメージ', bodyClass = '', showInstructions = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
 ---
 <!doctype html>
@@ -11,8 +12,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#101d48" />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
-    <title>{title}</title>
+    <title>【非公式・選考課題】{title}</title>
     <slot name="head" />
   </head>
-  <body class={bodyClass}><slot /></body>
+  <body class={bodyClass}><DemoNotice showInstructions={showInstructions} /><slot /></body>
 </html>

@@ -125,6 +125,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #bea775;outline-offset:6p
 .gallery-image>span{position:absolute;bottom:12px;right:12px;width:28px;height:28px;background:#17152280;color:white;font-family:Arial,sans-serif;line-height:28px;font-size:18px}
 .lp-sales{position:relative;overflow:clip;background:var(--deep);padding:15px 0 110px}
 .sales-content{width:56%;max-width:820px;margin:auto;position:relative;z-index:1}
+.sales-demo-note{font:400 12px/1.8 Arial,'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;text-align:center;color:var(--ink);border:1px solid #ab957c66;padding:10px 14px;margin:24px 0}
 .sales-side{position:absolute;top:0;bottom:0;width:20%}
 .sales-side.left{left:0}
 .sales-side.right{right:0}
@@ -169,7 +170,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #bea775;outline-offset:6p
 .lp-footer>p{font-size:13px;margin:20px 0 30px;line-height:2;letter-spacing:.1em}
 .lp-footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 35px}
 .lp-footer nav>a{font:14px/2 'EB Garamond',serif;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid #a88c5255}
-.lp-footer p.lp-disclaimer{font-size:10px;letter-spacing:0;color:#9b9690;margin-bottom:0}
+.lp-footer .demo-disclaimer{margin-top:28px}
 .mobile-fixed-nav{display:none}
 .lightbox{position:fixed;inset:0;margin:0;width:100%;height:100%;max-height:none;max-width:none;padding:30px 65px;background:#080910f2;border:0;color:white}
 .lightbox::backdrop{background:#080910}
@@ -330,7 +331,6 @@ to{transform:translateX(-50%)}
 .lp-footer>p{font-size:11px}
 .lp-footer nav{gap:10px 20px}
 .lp-footer nav>a{font-size:12px}
-.lp-footer p.lp-disclaimer{font-size:9px}
 .mobile-fixed-nav{position:fixed;inset:0 0 auto;height:54px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:15px;background:#14131ceb;color:#f2e2c5;padding:0 18px;transform:translateY(-100%);transition:transform .4s;backdrop-filter:blur(12px)}
 .mobile-fixed-nav.is-visible{transform:translateY(0)}
 .mobile-fixed-nav a{font:11px/1.5 Arial,sans-serif;letter-spacing:.04em;text-decoration:none}

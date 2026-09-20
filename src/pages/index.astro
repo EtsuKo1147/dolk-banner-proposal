@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import DemoDisclaimer from '../components/DemoDisclaimer.astro';
 import site from '../data/site.json';
 import mobile from '../data/mobile-site.json';
 import '../styles/home.css';
@@ -9,7 +10,7 @@ const categories = ['ドール','ブラインドドール','パーツ','ウィ�
 const socialNames = ['X','facebook','LINE','Instagram','Youtube','X(EN)','rednote','weibo'];
 const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:'Happy Fullset'}];
 ---
-<Base title="DOLK STATION｜バナー掲載イメージ" bodyClass="storefront">
+<Base title="DOLK バナー掲載デモ" bodyClass="storefront" showInstructions>
   <header class="mobile-header mobile-only" aria-label="DOLK モバイルヘッダー">
     <img class="mobile-menu" src={url(mobile.header[0])} alt="メニュー（掲載イメージ）" width="42" height="35" />
     <img class="mobile-logo" src={url(mobile.header[1])} alt="DOLK" width="146" height="34" />
@@ -73,7 +74,7 @@ const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:
     <div class="footer-content"><div class="footer-category"><strong>商品を探す</strong>{categories.map(item=><span>{item}</span>)}</div><div class="footer-tools"><div><span>メーカー名 ⌃</span><span>おすすめアイテム ⌃</span><span>最新リリース ⌃</span><p>♥ ほしいものリスト　　 │　 ▤ 一覧リスト</p></div><div class="footer-social">{site.social.slice(0,5).map((item,i)=><img src={url(item.src!)} alt={socialNames[i]} loading="lazy" />)}</div><b>🛒 ショッピングカート　 (0点) ¥0　 <small>カートを見る ›</small></b></div><div class="footer-support"><div><strong>お客様サポート</strong><p>› 初めての方へ</p><p>› 新規会員登録</p></div><div><p><span>お買い物ガイド</span> ヘルプ　　 ご注文について　　 お支払い方法について　　 配送・送料について　　 よくあるご質問</p><p><span>会員メニュー</span> 会員ログイン　　 マイページ　　 ID・パスワードを忘れた方　　 ポイントについて</p><p><span>店舗情報</span> DOLK 東京店　　 DOLK 大阪店　　 DOLK ラジオ会館店</p></div></div></div>
     <div class="footer-banners"><span>‹</span>{site.footer.map(item=><img src={url(item.src!)} alt="DOLK キャラクタードール" loading="lazy" />)}<span>›</span></div>
     <div class="copyright"><img src={url('images/site/Logo.png')} alt="DOLK STATION" loading="lazy" /><span>© DOLK STATION / Vodaless,Inc. All rights reserved.</span><span class="legal">特定商取引法表記　 個人情報保護方針　 ご利用規約　 採用情報　 会社概要</span></div>
-    <p class="unofficial-note">選考課題として制作した非公式の掲載イメージです。掲載画像・ロゴの権利は各権利者に帰属します。</p>
+    <DemoDisclaimer />
   </footer>
   <div class="language-display" aria-hidden="true">◎ Language</div>
 </Base>
