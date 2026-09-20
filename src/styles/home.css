@@ -22,6 +22,14 @@ a{color:inherit}
 .search-submit{height:32px;padding:6px 14px;font-size:1.2em;background:#6373a5;color:white;font-weight:bold;border-radius:3px}
 .search-links{margin-left:auto;font-weight:bold}
 .campaigns{overflow:hidden}
+.demo-marquee{height:clamp(30px,2.28vw,46px);overflow:hidden;background:#00548e;color:#ffda00;display:flex;align-items:center;font-size:clamp(13px,1.1vw,22px);font-weight:400;line-height:1.4}
+.demo-marquee-track{display:flex;width:max-content;flex-shrink:0;animation:demo-marquee-scroll 60s linear infinite;will-change:transform}
+.demo-marquee-group{display:flex;align-items:center;justify-content:space-around;flex-shrink:0;min-width:100vw}
+.demo-marquee-group span{display:block;white-space:nowrap;flex-shrink:0;padding-right:2.5em}
+.demo-marquee:hover .demo-marquee-track,.demo-marquee:focus .demo-marquee-track{animation-play-state:paused}
+.demo-marquee:focus-visible{outline:2px solid #ffda00;outline-offset:-2px}
+@keyframes demo-marquee-scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.demo-marquee{overflow-x:auto;scrollbar-width:none}.demo-marquee-track{animation:none;will-change:auto}}
 .campaign-strip{display:flex;width:max-content;height:clamp(30px,2.28vw,46px)}
 .campaign-strip img{height:100%;width:auto;max-width:none}
 .store-layout{display:grid;grid-template-columns:var(--side) minmax(0,1fr);gap:1.6%;padding:0 2% 0 1%}
@@ -176,6 +184,7 @@ a{color:inherit}
 .search-submit{font-size:12px}
 .search-links{display:none}
 .campaign-strip{width:100%;height:auto}
+.demo-marquee{height:auto;aspect-ratio:750/80;font-size:clamp(13px,3.5vw,22px)}
 .campaign-strip img{width:100%;height:auto;max-width:100%;aspect-ratio:750/80}
 .campaign-strip img:not(:first-child){display:none}
 .store-layout{display:block;padding:0}

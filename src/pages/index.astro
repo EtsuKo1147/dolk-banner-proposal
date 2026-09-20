@@ -8,6 +8,7 @@ const url = (path:string) => base + path;
 const categories = ['ドール','ブラインドドール','パーツ','ウィッグ','アイ','ドレス','シューズ','アクセサリー','ツール','その他'];
 const socialNames = ['X','facebook','LINE','Instagram','Youtube','X(EN)','rednote','weibo'];
 const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:'Happy Fullset'}];
+const demoMessage = '本サイトは選考課題として制作したデモサイトです。DOLK公式サイトではありません。';
 ---
 <Base title="【非公式・選考課題】DOLK バナー掲載デモ" bodyClass="storefront">
   <header class="mobile-header mobile-only" aria-label="DOLK モバイルヘッダー">
@@ -22,7 +23,10 @@ const products = [{slug:'dingdang',name:'DingDang'}, {slug:'happy-fullset',name:
   </header>
   <div class="search-row"><div class="search-display">検索ワードを入力</div><span class="search-category">全カテゴリー　 ▾</span><span class="search-submit">検索</span><span class="search-links">▤ 一覧リスト　 │　 ♥ ほしいものリスト</span></div>
   <div class="campaigns" aria-label="キャンペーン掲載イメージ">
-    {['banner_img20260915202422.jpg','banner_img20260915202408.jpg'].map(file=><div class="campaign-strip">{Array.from({length:6},()=> <img src={url('images/site/'+file)} alt="9月23日まで・キャンペーン" />)}</div>)}
+    <div class="demo-marquee" role="region" aria-label={demoMessage} tabindex="0" title="マウスを重ねるか、キーボードでフォーカスすると一時停止します。">
+      <div class="demo-marquee-track" aria-hidden="true">{Array.from({length:2},()=> <div class="demo-marquee-group">{Array.from({length:3},()=> <span>{demoMessage}</span>)}</div>)}</div>
+    </div>
+    <div class="campaign-strip">{Array.from({length:6},()=> <img src={url('images/site/banner_img20260915202408.jpg')} alt="9月23日まで・キャンペーン" />)}</div>
   </div>
   <div class="store-layout">
     <aside class="store-sidebar">

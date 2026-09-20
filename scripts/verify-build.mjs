@@ -21,6 +21,10 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     await fs.access(target);
   }
   if(!route){
+    assert.equal($('.demo-marquee-group').length,2);
+    assert.equal($('.demo-marquee-group').first().text(),$('.demo-marquee-group').last().text(),'Marquee groups must match for a seamless loop');
+    assert.equal($('.campaigns img[src$="banner_img20260915202422.jpg"]').length,0,'Original blue promotional artwork must be removed');
+    assert.equal($('.campaign-strip img[src$="banner_img20260915202408.jpg"]').length,6,'Keep the red promotional strip unchanged');
     assert.equal($('.welcome small').text(),'非公式・選考課題');
     assert.equal($('.welcome strong').text(),'by Koetsu');
     assert.equal($('.store-header .header-demo-note').length,1);
