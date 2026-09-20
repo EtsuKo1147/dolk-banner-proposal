@@ -9,6 +9,8 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
   const html=await fs.readFile('dist/'+route+'index.html','utf8');
   const $=load(html);
   assert.equal($('meta[name=robots]').attr('content'),'noindex, nofollow');
+  const expectedTitle=route ? `【非公式・選考課題】${route==='dingdang/'?'DingDang':'Happy Fullset'}｜商品紹介デモ` : '【非公式・選考課題】DOLK バナー掲載デモ';
+  assert.equal($('title').text(),expectedTitle);
   for(const el of $('[src],link[href],a[href],source[srcset]').toArray()){
     const ref=$(el).attr('src') || $(el).attr('href') || $(el).attr('srcset');
     if(!ref || ref.startsWith('https:') || ref.startsWith('data:'))continue;
@@ -19,6 +21,9 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     await fs.access(target);
   }
   if(!route){
+    assert.equal($('.store-header .header-demo-note').length,1);
+    assert.equal($('.account-links,.utility-links').length,0);
+    assert.equal($('.demo-notice').length,0,'No extra notice bar should change the page dimensions');
     assert.equal($('a').length,2,'Homepage should have only two product links');
     assert.equal($('picture source').length,2);
     assert.ok($('.hero-center').attr('src').endsWith('banner_img20260821190552.jpg'));

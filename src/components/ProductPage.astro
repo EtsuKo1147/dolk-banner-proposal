@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
 const photo = (i:number) => base + p.photos[i];
 const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','SALES INFORMATION'],['exhibition','EXHIBITION'],['product','PRODUCT']];
 ---
-<Base title={`${p.name}｜DOLK 特設ページ・掲載イメージ`} bodyClass={`product-page theme-${p.theme}`} description={`${p.name}の魅力を紹介する、非公式の選考課題用特設ページ。`}>
+<Base title={`【非公式・選考課題】${p.name}｜商品紹介デモ`} bodyClass={`product-page theme-${p.theme}`} description={`${p.name}の魅力を紹介する、非公式の選考課題用特設ページ。`}>
   <Fragment slot="head"><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" /></Fragment>
   <header class="lp-header"><a class="lp-logo" href={base} aria-label="DOLK 掲載ページへ戻る">DOLK</a><a class="back-to-store" href={base}>掲載ページへ <span>↗</span></a></header>
   <main>
