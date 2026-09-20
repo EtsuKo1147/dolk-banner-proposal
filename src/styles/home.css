@@ -55,6 +55,8 @@ a{color:inherit}
 .hero-center{width:100%;border-radius:15px}
 .hero-peek{overflow:hidden;border-radius:15px}
 .hero-peek img{height:100%;width:100%;object-fit:cover;max-width:none}
+.hero-peek:first-child img{object-position:right}
+.hero-peek:last-child img{object-position:left}
 .carousel-dots{height:42px;display:flex;justify-content:center;align-items:center;gap:11px}
 .carousel-dots span{width:14px;height:14px;border-radius:50%;background:#e5e5e5}
 .carousel-dots .active{background:#19274e;box-shadow:0 0 0 1px white,0 0 0 2px #19274e}

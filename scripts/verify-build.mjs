@@ -21,6 +21,10 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
   if(!route){
     assert.equal($('a').length,2,'Homepage should have only two product links');
     assert.equal($('picture source').length,2);
+    assert.ok($('.hero-center').attr('src').endsWith('banner_img20260821190552.jpg'));
+    assert.equal($('.thumbnail').length,6);
+    assert.ok($('.thumbnail').first().hasClass('selected'));
+    assert.ok($('.carousel-dots span').first().hasClass('active'));
     const mobile=JSON.parse(await fs.readFile('src/data/mobile-site.json','utf8'));
     assert.equal($('.mobile-topic img').length,mobile.topics.length);
     assert.equal($('.mobile-campaign-banners img').length,3);

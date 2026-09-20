@@ -12,7 +12,7 @@ const images = (selector, limit = 100) => $(selector).toArray().slice(0, limit).
 })).filter(x => x.source);
 const data = {
   hero: images('#TopSliderIn li img'),
-  thumbnails: $('#TMSMenuIn li').toArray().slice(6,12).map(el=>({
+  thumbnails: $('#TMSMenuIn li').toArray().slice(0,6).map(el=>({
     source: clean($(el).find('img').attr('src')),
     category: $(el).find('.TMSMMaker').text().trim(),
     text: $(el).find('.TMSMInfo').text().trim(),
