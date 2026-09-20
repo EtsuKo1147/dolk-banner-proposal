@@ -9,12 +9,6 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
   const html=await fs.readFile('dist/'+route+'index.html','utf8');
   const $=load(html);
   assert.equal($('meta[name=robots]').attr('content'),'noindex, nofollow');
-  assert.ok($('title').text().startsWith('【非公式・選考課題】'));
-  assert.equal($('.demo-notice').length,1);
-  assert.equal($('.demo-disclaimer').length,1);
-  assert.ok($('.demo-notice').text().includes('DOLK公式サイトではありません'));
-  assert.ok($('.demo-disclaimer').text().includes('本サイトからの購入・注文はできません'));
-  assert.equal($('.demo-instructions').length,route ? 0 : 1,'Banner-only instructions must appear only on the homepage');
   for(const el of $('[src],link[href],a[href],source[srcset]').toArray()){
     const ref=$(el).attr('src') || $(el).attr('href') || $(el).attr('srcset');
     if(!ref || ref.startsWith('https:') || ref.startsWith('data:'))continue;
@@ -42,8 +36,6 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     }
     console.log('PASS independent mobile layout and original square assets');
   }else{
-    assert.equal($('.lp-hero > .lp-header').length,1,'LP header must stay below the demo notice');
-    assert.equal($('.sales-demo-note').length,1);
     assert.equal($('[data-gallery]').length,5);
     const photos=new Set($('img[src]').toArray().map(el=>$(el).attr('src')).filter(src=>src.includes(`/images/${route}photo-`)));
     assert.equal(photos.size,5,`${route}: expected exactly five unique product photos`);

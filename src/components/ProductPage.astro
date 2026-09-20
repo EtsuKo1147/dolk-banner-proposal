@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import PhotoSlider from './PhotoSlider.astro';
-import DemoDisclaimer from './DemoDisclaimer.astro';
 import '../styles/product.css';
 import type { Product } from '../data/products';
 const { product: p } = Astro.props as {product:Product};
@@ -9,11 +8,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
 const photo = (i:number) => base + p.photos[i];
 const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','SALES INFORMATION'],['exhibition','EXHIBITION'],['product','PRODUCT']];
 ---
-<Base title={`${p.name}｜商品紹介デモ`} bodyClass={`product-page theme-${p.theme}`} description={`${p.name}の魅力を紹介する、非公式の選考課題用特設ページ。`}>
+<Base title={`${p.name}｜DOLK 特設ページ・掲載イメージ`} bodyClass={`product-page theme-${p.theme}`} description={`${p.name}の魅力を紹介する、非公式の選考課題用特設ページ。`}>
   <Fragment slot="head"><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" /></Fragment>
+  <header class="lp-header"><a class="lp-logo" href={base} aria-label="DOLK 掲載ページへ戻る">DOLK</a><a class="back-to-store" href={base}>掲載ページへ <span>↗</span></a></header>
   <main>
     <section class="lp-hero" id="top" aria-label={`${p.name} メインビジュアル`}>
-      <header class="lp-header"><a class="lp-logo" href={base} aria-label="DOLK 掲載ページへ戻る">DOLK</a><a class="back-to-store" href={base}>掲載ページへ <span>↗</span></a></header>
       <div class="hero-atmosphere" style={`background-image:url('${photo(0)}')`}></div>
       <PhotoSlider photos={p.heroPhotos.map(i=>p.photos[i])} positions={p.heroPhotos.map(i=>p.photoPositions[i])} label={`${p.name} メインビジュアル`} hero />
       <div class="hero-shade"></div>
@@ -51,7 +50,6 @@ const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','S
     <section class="lp-sales" id="information">
       <div class="sales-side left" aria-hidden="true"><img src={photo(1)} alt="" loading="lazy" /></div><div class="sales-side right" aria-hidden="true"><img src={photo(2)} alt="" loading="lazy" /></div>
       <div class="sales-content"><div class="section-heading reveal"><span class="heading-jp">販売情報</span><h2>SALES INFORMATION</h2><span class="heading-rule">◆</span></div><p class="section-lead reveal">{p.name}<br />お迎えについてのご案内</p>
-      <p class="sales-demo-note">掲載内容はデモです。本サイトからの購入・注文はできません。</p>
       <div class="sales-table reveal"><h3>DOLKオンライン受注</h3><dl><div><dt>受注期間</dt><dd>{p.sales.period}</dd></div><div><dt>受注方法</dt><dd>{p.sales.method}</dd></div><div><dt>販売価格</dt><dd>{p.price}</dd></div></dl><h3>DOLK店頭受注</h3><dl><div><dt>受注期間</dt><dd>詳細は後日ご案内いたします。</dd></div><div><dt>受注店舗</dt><dd>取扱店舗は確認後に掲載いたします。</dd></div></dl><h3>お届けについて</h3><dl><div><dt>お届け時期</dt><dd>{p.sales.shipping}</dd></div><div><dt>ご案内</dt><dd>掲載内容は制作中のイメージです。<br />販売条件・仕様は確定後に更新いたします。</dd></div></dl></div></div>
     </section>
     <section class="lp-exhibition" id="exhibition">
@@ -63,7 +61,7 @@ const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','S
       <div class="product-content"><div class="section-heading reveal"><span class="heading-jp">商品情報</span><h2>PRODUCT INFORMATION</h2><span class="heading-rule">◆</span></div><div class="product-card reveal"><span class="eyebrow">DOLK DOLL COLLECTION</span><h3>{p.name}</h3><p>{p.kana} キャストドール</p><div class="product-price"><span>販売価格</span><strong>{p.price}</strong></div><div class="set-content"><h4>セット内容</h4><ul>{p.setContents.map(text=><li>{text}</li>)}</ul></div><p class="draft-detail">※ 仕様・販売情報は仮の掲載内容です。</p><a class="ornate-button" href={base}>掲載ページへ戻る <span>›</span></a></div></div>
     </section>
   </main>
-  <footer class="lp-footer"><a class="lp-logo" href={base}>DOLK</a><p>{p.name} キャストドール<br />特設ページ・掲載イメージ</p><nav aria-label="フッターナビゲーション">{navigation.map(([id,label])=><a href={'#'+id}>{label}</a>)}</nav><DemoDisclaimer /></footer>
+  <footer class="lp-footer"><a class="lp-logo" href={base}>DOLK</a><p>{p.name} キャストドール<br />特設ページ・掲載イメージ</p><nav aria-label="フッターナビゲーション">{navigation.map(([id,label])=><a href={'#'+id}>{label}</a>)}</nav><p class="lp-disclaimer">選考課題として制作した非公式の掲載イメージです。<br />商品説明・販売情報は仮の内容です。画像・ロゴの権利は各権利者に帰属します。</p></footer>
   <nav class="mobile-fixed-nav" aria-label="ページ内ナビゲーション"><a href={base}>DOLK</a><a href="#gallery">GALLERY</a><a href="#product">商品情報</a><button type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>☰</button></nav>
   <dialog class="mobile-menu" id="mobile-menu"><button type="button" class="menu-close" aria-label="メニューを閉じる">×</button><span class="menu-brand">{p.name}</span><nav>{navigation.map(([id,label])=><a href={'#'+id}>{label}</a>)}<a href={base}>掲載ページへ戻る</a></nav></dialog>
   <dialog class="lightbox" aria-label="写真を拡大表示"><button class="lightbox-close" aria-label="拡大表示を閉じる">×</button><button class="lightbox-prev" aria-label="前の写真">‹</button><figure><img alt="" /><figcaption aria-live="polite"></figcaption></figure><button class="lightbox-next" aria-label="次の写真">›</button></dialog>

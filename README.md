@@ -50,5 +50,3 @@ LP 包括轮播（可暂停、键盘操作和触控滑动）、滚动出现、St
 `https://etsuko1147.github.io/dolk-banner-proposal/`
 
 页面为非官方面试课题展示，已添加 `noindex, nofollow`。图片与 Logo 的权利属于各自权利人。
-
-三个页面的标题与顶部均标注“非公式・選考課題”。首页额外说明仅 DingDang / Happy Fullset 两组 Banner 可跳转；此操作说明不出现在有轮播和图库交互的 LP。顶部说明不会悬浮遮挡内容。共用说明组件为 `src/components/DemoNotice.astro`，页脚完整说明为 `src/components/DemoDisclaimer.astro`。

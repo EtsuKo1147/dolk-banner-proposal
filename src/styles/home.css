@@ -114,6 +114,7 @@ a{color:inherit}
 .copyright{background:black;padding:8px 8%;display:flex;align-items:center;gap:16px;font-size:.9em}
 .copyright>img{width:165px}
 .legal{margin-left:auto}
+.unofficial-note{margin:0;background:#080b17;color:#aaa;text-align:center;font-size:11px;padding:10px;line-height:1.7}
 .language-display{position:fixed;right:16px;bottom:15px;background:#f48b19;color:white;padding:8px 12px;border-radius:6px;font-size:13px;font-weight:bold;z-index:5;box-shadow:0 1px 4px #0002}
 .mobile-only{display:none}
 
@@ -237,5 +238,6 @@ a{color:inherit}
 .footer-banners>span{font-size:14px;padding:4px}
 .copyright{padding:13px;flex-wrap:wrap;justify-content:center;gap:10px;font-size:9px}
 .copyright img{width:145px}
+.unofficial-note{font-size:9px;padding:12px 20px 40px}
 .language-display{font-size:10px;right:9px;bottom:8px;padding:7px 9px}
 }
