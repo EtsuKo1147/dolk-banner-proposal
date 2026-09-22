@@ -92,8 +92,6 @@ a{color:inherit}
 .banner-grid img{width:100%;height:auto;aspect-ratio:730/135;border-radius:10px;object-fit:cover}
 .proposal-banner{position:relative;display:block;text-decoration:none;border-radius:10px;outline-offset:5px;transition:filter .25s}
 .proposal-banner:hover{filter:brightness(1.04)}
-.proposal-caption{position:absolute;inset:auto 16px 9px;font-size:clamp(10px,.82vw,16px);color:#283b63;display:flex;justify-content:space-between;font-weight:bold}
-.proposal-caption>span{font-size:.82em}
 .original-banner{min-width:0}
 .history{padding:12px 1% 20px;background:#f1f1f1}
 .history h2{font-size:1.2em;margin:0 0 10px}
@@ -189,6 +187,7 @@ a{color:inherit}
 .campaign-strip img:not(:first-child){display:none}
 .store-layout{display:block;padding:0}
 .store-main{padding-top:0}
+.mobile-hero-link{display:block;outline-offset:-3px}
 .mobile-hero{width:100%;height:auto;aspect-ratio:1}
 .mobile-ticker{display:flex;overflow:hidden;border-bottom:1px solid #eee;gap:3%;padding:10px 0;color:#777}
 .mobile-ticker-item{display:flex;align-items:center;gap:8px;flex:0 0 65%;min-width:0;border-right:1px dashed #ddd;padding:4px 8px}
@@ -215,8 +214,6 @@ a{color:inherit}
 .news-lines time{display:none}
 .banner-grid{margin:0 1.067% 12%;gap:4px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .banner-grid .proposal-banner img,.banner-grid .mobile-topic img{aspect-ratio:1;object-fit:contain}
-.proposal-banner .proposal-caption{font-size:11px;inset:auto 10px 12px;display:block}
-.proposal-caption>span{display:block;margin-top:4px}
 .banner-grid .original-banner{display:none}
 .banner-grid img{border-radius:7px}
 .mobile-campaign-banners{display:grid;gap:5px;padding:0 1.333%}

@@ -44,7 +44,7 @@ const demoMessage = '本サイトは選考課題として制作したデモサ�
     </aside>
     <main class="store-main">
       <section class="mobile-showcase mobile-only" aria-label="モバイルのメイン特集">
-        <img class="mobile-hero" src={url(mobile.hero)} width="750" height="750" alt="スカーレット・エル・ヴァンディミオン キャストドール 期間限定で受注開始" fetchpriority="high" />
+        <a class="mobile-hero-link" href={url('dingdang/')} aria-label="DingDang の特設ページを見る"><img class="mobile-hero" src={url(`${mobile.hero}?v=20260923-1`)} width="1080" height="1080" alt="DingDang バナー" fetchpriority="high" /></a>
         <div class="mobile-ticker">{mobile.ticker.map(item=><div class="mobile-ticker-item"><img src={url(item.src)} width="74" height="74" alt="" /><p>{item.text}</p></div>)}</div>
       </section>
       <section class="top-showcase" aria-label="最新のお知らせと特集">
@@ -58,7 +58,7 @@ const demoMessage = '本サイトは選考課題として制作したデモサ�
       </section>
       <h2 class="mobile-section-heading mobile-topics-heading mobile-only"><img src={url(mobile.topicsHeading)} width="750" height="27" alt="最新トピックス NEW TOPICS" /></h2>
       <section class="banner-grid" aria-label="商品特集バナー">
-        {products.map(p=><a class="proposal-banner" href={url(p.slug+'/')} aria-label={`${p.name} の特設ページを見る`}><picture><source media="(max-width: 700px)" srcset={bannerUrl(p.slug, '1080x1080')} /><img src={bannerUrl(p.slug, '730x135')} width="730" height="135" alt={`${p.name} バナー差し替え用`} /></picture><span class="proposal-caption">{p.name} <span>特設ページへ ›</span></span></a>)}
+        {products.map(p=><a class="proposal-banner" href={url(p.slug+'/')} aria-label={`${p.name} の特設ページを見る`}><picture><source media="(max-width: 700px)" srcset={bannerUrl(p.slug, '1080x1080')} /><img src={bannerUrl(p.slug, '730x135')} width="730" height="135" alt={`${p.name} バナー`} /></picture></a>)}
         {site.banners.map((item,i)=><div class="original-banner"><img src={url(item.src!)} width="730" height="135" alt={`DOLK 商品特集 ${i+1}`} loading="lazy" /></div>)}
         {mobile.topics.map((src,i)=><div class="mobile-topic mobile-only"><img src={url(src)} width="362" height="362" alt={`DOLK モバイル商品特集 ${i+1}`} loading="lazy" /></div>)}
       </section>

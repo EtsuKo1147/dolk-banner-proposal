@@ -16,8 +16,9 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     if(!ref || ref.startsWith('https:') || ref.startsWith('data:'))continue;
     if(ref.startsWith('#')) {assert.ok($(ref).length,`${route}: missing anchor ${ref}`);continue;}
     assert.ok(ref.startsWith(base),`${route}: incorrect GitHub Pages path ${ref}`);
-    let target=path.join('dist',ref.slice(base.length).split('#')[0]);
-    if(ref.endsWith('/'))target=path.join(target,'index.html');
+    const pathname=ref.slice(base.length).split(/[?#]/)[0];
+    let target=path.join('dist',pathname);
+    if(pathname.endsWith('/'))target=path.join(target,'index.html');
     await fs.access(target);
   }
   if(!route){
@@ -30,13 +31,17 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     assert.equal($('.store-header .header-demo-note').length,1);
     assert.equal($('.account-links,.utility-links').length,0);
     assert.equal($('.demo-notice').length,0,'No extra notice bar should change the page dimensions');
-    assert.equal($('a').length,2,'Homepage should have only two product links');
+    assert.equal($('a').length,3,'Homepage should link the mobile hero and both product banners');
+    assert.equal($('.mobile-hero-link').attr('href'),base+'dingdang/');
+    assert.equal($('.proposal-banner').length,2);
+    assert.equal($('.proposal-caption').length,0,'Product banners should have no visible text overlay');
     assert.equal($('picture source').length,2);
     assert.ok($('.hero-center').attr('src').endsWith('banner_img20260821190552.jpg'));
     assert.equal($('.thumbnail').length,6);
     assert.ok($('.thumbnail').first().hasClass('selected'));
     assert.ok($('.carousel-dots span').first().hasClass('active'));
     const mobile=JSON.parse(await fs.readFile('src/data/mobile-site.json','utf8'));
+    assert.ok($('.mobile-hero').attr('src').includes(mobile.hero));
     assert.equal($('.mobile-topic img').length,mobile.topics.length);
     assert.equal($('.mobile-campaign-banners img').length,3);
     assert.equal($('.mobile-header').length,1);

@@ -20,7 +20,7 @@ npm run dev
 | DingDang | dingdang-730x135.png | dingdang-1080x1080.png |
 | Happy Fullset | happy-fullset-730x135.png | happy-fullset-1080x1080.png |
 
-电脑展示两张横幅；700px 及以下自动展示两张方形图。四张图都通过各自商品链接进入 LP。首页只有这两组 Banner 有交互。
+电脑展示两张横幅；700px 及以下自动展示两张方形图，手机首页顶部主视觉也使用 DingDang 的方形图。Banner 本身可点击并进入对应商品的 LP，不叠加文字提示。
 
 ## 修改 LP 文案
 
