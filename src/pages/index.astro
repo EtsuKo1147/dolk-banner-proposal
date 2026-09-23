@@ -49,7 +49,7 @@ const demoMessage = '本サイトは選考課題として制作したデモサ�
       </section>
       <section class="top-showcase" aria-label="最新のお知らせと特集">
         <div class="showcase-main">
-          <div class="main-hero"><div class="hero-peek"><img src={url(site.hero[0].src!)} alt="東方Project 博麗霊夢 キャストドール" /></div><img class="hero-center" src={url(site.thumbnails[0].src!)} alt={site.thumbnails[0].text} fetchpriority="high" /><div class="hero-peek"><img src={url(site.thumbnails[1].src!)} alt="学園アイドルマスター 篠澤 広 キャストドール" /></div></div>
+          <div class="main-hero"><div class="hero-peek"><img src={url(site.hero[0].src!)} alt="東方Project 博麗霊夢 キャストドール" /></div><a class="desktop-hero-link" href={url('dingdang/')} aria-label="DingDang の特設ページを見る"><img class="hero-center" src={url(site.thumbnails[0].src!)} alt={site.thumbnails[0].text} fetchpriority="high" /></a><div class="hero-peek"><img src={url(site.thumbnails[1].src!)} alt="学園アイドルマスター 篠澤 広 キャストドール" /></div></div>
           <div class="carousel-dots" aria-hidden="true">{Array.from({length:13},(_,i)=><span class:list={{active:i===0}} />)}</div>
           <div class="thumbnail-strip"><span class="static-arrow" aria-hidden="true">‹</span>{site.thumbnails.map((item,i)=><article class:list={['thumbnail',{selected:i===0}]}><div class="thumbnail-label">{item.category}</div><img src={url(item.src!)} alt="" /><p>{item.text}</p></article>)}<span class="static-arrow" aria-hidden="true">›</span></div>
           <div class="latest-news"><div class="news-label">最新のお知らせ<span>一覧　 ›</span></div><div class="news-lines">{site.news.map(item=><div><time>{item.date}</time><b>»</b><span>{item.text}</span></div>)}</div></div>

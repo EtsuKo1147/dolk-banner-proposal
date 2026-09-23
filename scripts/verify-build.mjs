@@ -31,8 +31,11 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     assert.equal($('.store-header .header-demo-note').length,1);
     assert.equal($('.account-links,.utility-links').length,0);
     assert.equal($('.demo-notice').length,0,'No extra notice bar should change the page dimensions');
-    assert.equal($('a').length,3,'Homepage should link the mobile hero and both product banners');
+    assert.equal($('a').length,4,'Homepage should link both desktop/mobile heroes and both product banners');
+    assert.equal($('.desktop-hero-link').attr('href'),base+'dingdang/');
+    assert.equal($('.desktop-hero-link > .hero-center').length,1,'Desktop hero artwork must be clickable');
     assert.equal($('.mobile-hero-link').attr('href'),base+'dingdang/');
+    assert.equal($('.mobile-hero-link > .mobile-hero').length,1,'Mobile hero artwork must be clickable');
     assert.equal($('.proposal-banner').length,2);
     assert.equal($('.proposal-caption').length,0,'Product banners should have no visible text overlay');
     assert.equal($('picture source').length,2);

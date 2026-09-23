@@ -63,6 +63,7 @@ a{color:inherit}
 .showcase-main{min-width:0}
 .main-hero{display:grid;grid-template-columns:18% 56% 18%;gap:4%;width:100%;overflow:hidden}
 .hero-center{width:100%;border-radius:15px}
+.desktop-hero-link{display:block;min-width:0;border-radius:15px;outline-offset:4px}
 .hero-peek{overflow:hidden;border-radius:15px}
 .hero-peek img{height:100%;width:100%;object-fit:cover;max-width:none}
 .hero-peek:first-child img{object-position:right}
