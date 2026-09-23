@@ -3,13 +3,15 @@ import Base from '../layouts/Base.astro';
 import '../styles/dingdang.css';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
 const artwork = (name: string) => `${base}images/dingdang-pdp/${name}`;
-const photo = (n: number) => `${base}images/dingdang/dd-${n}.webp`;
-const photos = [
-  { n: 1, title: 'まっすぐな、まなざし。', en: 'A tender gaze', alt: '紫色の瞳と猫耳ベレー帽、胸元に手を添えるDingDang' },
-  { n: 2, title: 'ふとした仕草まで。', en: 'A quiet moment', alt: '頬に手を添え、こちらを見つめるDingDangのアップ' },
-  { n: 3, title: '小さな微笑み。', en: 'A little smile', alt: '紫色のセーラー服で座り、首をかしげるDingDang' },
-  { n: 4, title: '物語の、その先へ。', en: 'Into her world', alt: 'ガラスの前に立つ、猫耳ベレー帽と紫色の衣装のDingDang全身' },
-  { n: 5, title: '光に包まれて。', en: 'Wrapped in light', alt: 'やわらかな光の中、横を見上げるDingDang' },
+const photo = (file: string) => `${base}images/dingdang/${file}`;
+// Each of the ten distinct photographs has one placement in the page:
+// story: photo-1/2; details: dd-2/4; gallery: dd-1/3, photo-3/4/5; information: dd-5.
+const galleryPhotos = [
+  { file: 'dd-1.webp', width: 1400, height: 2099, title: 'まっすぐな、まなざし。', en: 'A tender gaze', alt: '紫色の瞳と猫耳ベレー帽、胸元に手を添えるDingDang' },
+  { file: 'dd-3.webp', width: 1279, height: 1919, title: '小さな微笑み。', en: 'A little smile', alt: '紫色のセーラー服で座り、首をかしげるDingDang' },
+  { file: 'photo-3.webp', width: 750, height: 1038, title: '凛とした、まなざし。', en: 'A quiet elegance', alt: '黒髪に白いカチューシャ、グレーのジャケット姿で微笑むDingDang' },
+  { file: 'photo-4.webp', width: 617, height: 756, title: '放課後のひととき。', en: 'After-school daydream', alt: 'グレーの制服とチェックのスカートで、額に手を添えるDingDang' },
+  { file: 'photo-5.webp', width: 750, height: 909, title: '心に響く、小さな旋律。', en: 'A little melody', alt: '金色のロングヘアに白黒の衣装で、ピアノの前に座るDingDang' },
 ];
 ---
 <Base title="【非公式・選考課題】DingDang｜商品紹介デモ" description="澄んだ瞳、微笑みの少女。DingDangの世界を紹介する非公式の選考課題用特設ページ。" bodyClass="dingdang-page" themeColor="#1e1b25">
@@ -51,7 +53,7 @@ const photos = [
       </div>
       <div class="dd-story-layout">
         <figure class="dd-arch dd-reveal">
-          <img src={photo(1)} width="1400" height="2100" alt={photos[0].alt} loading="lazy" decoding="async" />
+          <img src={photo('photo-1.webp')} width="750" height="1000" alt="赤毛に黒い猫耳フードを合わせ、こちらを見つめるDingDang" loading="lazy" decoding="async" />
           <figcaption>DingDang <span>— a portrait of innocence</span></figcaption>
         </figure>
         <div class="dd-story-copy dd-reveal">
@@ -60,7 +62,7 @@ const photos = [
           <p>ふと目が合った、その瞬間。<br />透明感のある瞳と、あどけない微笑みが、<br />いつもの景色を少しだけ特別にする。</p>
           <p>猫耳のシルエットに、揺れるリボン。<br />愛らしさの中に、ほんの少しの気まぐれを。<br />DingDangと過ごす、あなただけの物語。</p>
           <a class="dd-text-link" href="#gallery">その表情を、もっと近くで <span aria-hidden="true">↗</span></a>
-          <figure class="dd-story-inset"><img src={photo(3)} width="1279" height="1919" alt={photos[2].alt} loading="lazy" decoding="async" /><figcaption>A LITTLE SMILE, JUST FOR YOU.</figcaption></figure>
+          <figure class="dd-story-inset"><img src={photo('photo-2.webp')} width="750" height="952" alt="丸い眼鏡と黒い猫耳フード、遊び心のある黒い衣装のDingDang" loading="lazy" decoding="async" /><figcaption>A LITTLE MISCHIEF, JUST FOR YOU.</figcaption></figure>
         </div>
       </div>
     </section>
@@ -72,7 +74,7 @@ const photos = [
         <p class="dd-subtitle">小さなディテールに、心を奪われて。</p>
       </div>
       <article class="dd-detail-row dd-reveal">
-        <figure class="dd-detail-image"><img src={photo(2)} width="1000" height="1500" alt={photos[1].alt} loading="lazy" decoding="async" /><figcaption>01 / EXPRESSION</figcaption></figure>
+        <figure class="dd-detail-image"><img src={photo('dd-2.webp')} width="1000" height="1500" alt="頬に手を添え、こちらを見つめるDingDangのアップ" loading="lazy" decoding="async" /><figcaption>01 / EXPRESSION</figcaption></figure>
         <div class="dd-detail-copy">
           <span class="dd-detail-index" aria-hidden="true">01</span>
           <span class="dd-kicker">EYES &amp; SMILE</span>
@@ -83,7 +85,7 @@ const photos = [
         </div>
       </article>
       <article class="dd-detail-row dd-detail-reverse dd-reveal">
-        <figure class="dd-detail-image"><img src={photo(4)} width="1279" height="1919" alt={photos[3].alt} loading="lazy" decoding="async" /><figcaption>02 / SILHOUETTE</figcaption></figure>
+        <figure class="dd-detail-image"><img src={photo('dd-4.webp')} width="1279" height="1919" alt="ガラスの前に立つ、猫耳ベレー帽と紫色の衣装のDingDang全身" loading="lazy" decoding="async" /><figcaption>02 / SILHOUETTE</figcaption></figure>
         <div class="dd-detail-copy">
           <span class="dd-detail-index" aria-hidden="true">02</span>
           <span class="dd-kicker">STYLE &amp; LITTLE THINGS</span>
@@ -98,16 +100,16 @@ const photos = [
 
     <section class="dd-gallery dd-section" id="gallery">
       <div class="dd-gallery-heading dd-reveal">
-        <div><span class="dd-kicker">MOMENTS TO TREASURE</span><h2 class="dd-english-heading">Portrait collection</h2><p class="dd-subtitle">どの瞬間も、あなたの宝物に。</p></div>
+        <div><span class="dd-kicker">MOMENTS TO TREASURE</span><h2 class="dd-english-heading">Portrait collection</h2><p class="dd-subtitle">装いを変えて、広がる物語。</p></div>
         <span class="dd-gallery-hint">写真をタップして拡大 <span aria-hidden="true">＋</span></span>
       </div>
       <div class="dd-gallery-grid">
-        {photos.map((item, i) => <figure class={`dd-gallery-item dd-gallery-item-${i + 1} dd-reveal`}>
-          <button type="button" data-gallery={i} data-src={photo(item.n)} data-alt={item.alt} aria-label={`写真 ${i + 1} を拡大：${item.title}`} aria-haspopup="dialog">
-            <img src={photo(item.n)} width={item.n === 1 ? 1400 : item.n === 2 ? 1000 : 1279} height={item.n === 1 ? 2100 : item.n === 2 ? 1500 : 1919} alt={item.alt} loading="lazy" decoding="async" />
+        {galleryPhotos.map((item, i) => <figure class={`dd-gallery-item dd-gallery-item-${i + 1} dd-reveal`}>
+          <button type="button" data-gallery={i} data-src={photo(item.file)} data-alt={item.alt} aria-label={`写真 ${i + 1} を拡大：${item.title}`} aria-haspopup="dialog">
+            <img src={photo(item.file)} width={item.width} height={item.height} alt={item.alt} loading="lazy" decoding="async" />
             <span class="dd-gallery-expand" aria-hidden="true">↗</span>
           </button>
-          <figcaption><span>0{item.n}</span><span>{item.title}<em>{item.en}</em></span></figcaption>
+          <figcaption><span>0{i + 1}</span><span>{item.title}<em>{item.en}</em></span></figcaption>
         </figure>)}
       </div>
     </section>
@@ -115,7 +117,7 @@ const photos = [
     <section class="dd-information dd-section" id="information">
       <div class="dd-section-heading dd-reveal"><span class="dd-kicker">A SPECIAL ENCOUNTER</span><h2 class="dd-english-heading">Welcome her home</h2><p class="dd-subtitle">DingDangをお迎えする、その日のために。</p><span class="dd-ornament" aria-hidden="true">✧</span></div>
       <div class="dd-information-card dd-reveal" id="product">
-        <div class="dd-product-portrait"><img src={photo(5)} width="1279" height="1919" alt={photos[4].alt} loading="lazy" decoding="async" /><span>ASLEEP EIDOLON<br />DOLL COLLECTION</span></div>
+        <div class="dd-product-portrait"><img src={photo('dd-5.webp')} width="1279" height="1919" alt="やわらかな光の中、横を見上げるDingDang" loading="lazy" decoding="async" /><span>ASLEEP EIDOLON<br />DOLL COLLECTION</span></div>
         <div class="dd-product-info">
           <span class="dd-kicker">SPECIAL RE-RELEASE</span>
           <h3>DingDang</h3><p class="dd-product-kana">ディンダン ／ 1/4 キャストドール</p>

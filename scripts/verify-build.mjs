@@ -53,9 +53,15 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     console.log('PASS independent mobile layout and original square assets');
   }else{
     assert.equal($('[data-gallery]').length,5);
-    const photoPrefix=route==='dingdang/'?'dd-':'photo-';
-    const photos=new Set($('img[src]').toArray().map(el=>$(el).attr('src')).filter(src=>src.includes(`/images/${route}${photoPrefix}`)));
-    assert.equal(photos.size,5,`${route}: expected exactly five unique product photos`);
+    const photoSources=$('main img[src]').toArray().map(el=>$(el).attr('src')).filter(src=>src.includes(`/images/${route}`));
+    if(route==='dingdang/'){
+      const expected=['photo-1','photo-2','photo-3','photo-4','photo-5','dd-1','dd-2','dd-3','dd-4','dd-5'].map(name=>base+'images/dingdang/'+name+'.webp');
+      assert.equal(photoSources.length,10,'DingDang must have exactly ten photograph placements');
+      assert.equal(new Set(photoSources).size,10,'Every DingDang photograph must appear exactly once');
+      assert.deepEqual([...photoSources].sort(),expected.sort(),'Use all original five and all five newly supplied photographs');
+    }else{
+      assert.equal(new Set(photoSources).size,5,`${route}: expected exactly five unique product photos`);
+    }
     if(route==='dingdang/'){
       assert.equal($('.dd-hero-layer').length,3,'DingDang hero must preserve the three independent text layers');
       assert.ok($('.dd-hero-layer').toArray().every(el=>$(el).attr('src').endsWith('.svg')),'All hero text layers must use SVG');
