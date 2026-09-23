@@ -9,7 +9,7 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
   const html=await fs.readFile('dist/'+route+'index.html','utf8');
   const $=load(html);
   assert.equal($('meta[name=robots]').attr('content'),'noindex, nofollow');
-  const expectedTitle=route ? `【非公式・選考課題】${route==='dingdang/'?'DingDang':'Happy Fullset'}｜商品紹介デモ` : '【非公式・選考課題】DOLK バナー掲載デモ';
+  const expectedTitle=route ? `【非公式・選考課題】${route==='dingdang/'?'DingDang':'Happy Fullset'}｜商品紹介デモ` : '選考課題｜掲載イメージ確認用モックアップ';
   assert.equal($('title').text(),expectedTitle);
   for(const el of $('[src],link[href],a[href],source[srcset]').toArray()){
     const ref=$(el).attr('src') || $(el).attr('href') || $(el).attr('srcset');
@@ -58,6 +58,7 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     assert.equal(photos.size,5,`${route}: expected exactly five unique product photos`);
     if(route==='dingdang/'){
       assert.equal($('.dd-hero-layer').length,3,'DingDang hero must preserve the three independent text layers');
+      assert.ok($('.dd-hero-layer').toArray().every(el=>$(el).attr('src').endsWith('.svg')),'All hero text layers must use SVG');
       assert.equal($('.dd-hero-action a').attr('href'),'#information','Demo CTA must only open page information');
       assert.equal($('.dd-background').length,1);
       assert.equal($('.dd-lightbox').length,1);
