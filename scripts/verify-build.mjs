@@ -53,8 +53,18 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     console.log('PASS independent mobile layout and original square assets');
   }else{
     assert.equal($('[data-gallery]').length,5);
-    const photos=new Set($('img[src]').toArray().map(el=>$(el).attr('src')).filter(src=>src.includes(`/images/${route}photo-`)));
+    const photoPrefix=route==='dingdang/'?'dd-':'photo-';
+    const photos=new Set($('img[src]').toArray().map(el=>$(el).attr('src')).filter(src=>src.includes(`/images/${route}${photoPrefix}`)));
     assert.equal(photos.size,5,`${route}: expected exactly five unique product photos`);
+    if(route==='dingdang/'){
+      assert.equal($('.dd-hero-layer').length,3,'DingDang hero must preserve the three independent text layers');
+      assert.equal($('.dd-hero-action a').attr('href'),'#information','Demo CTA must only open page information');
+      assert.equal($('.dd-background').length,1);
+      assert.equal($('.dd-lightbox').length,1);
+      assert.equal($('.lp-hero').length,0,'DingDang should not use the old shared product layout');
+      assert.equal($('.dd-nav a').length,4);
+      assert.ok($('.dd-demo-message').text().includes('実際の応募・購入はできません'));
+    }
   }
   console.log('PASS',base+route,'assets, navigation, metadata, photo count');
 }

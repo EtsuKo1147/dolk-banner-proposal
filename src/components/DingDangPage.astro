@@ -1,0 +1,143 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/dingdang.css';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+const artwork = (name: string) => `${base}images/dingdang-pdp/${name}`;
+const photo = (n: number) => `${base}images/dingdang/dd-${n}.webp`;
+const photos = [
+  { n: 1, title: 'まっすぐな、まなざし。', en: 'A tender gaze', alt: '紫色の瞳と猫耳ベレー帽、胸元に手を添えるDingDang' },
+  { n: 2, title: 'ふとした仕草まで。', en: 'A quiet moment', alt: '頬に手を添え、こちらを見つめるDingDangのアップ' },
+  { n: 3, title: '小さな微笑み。', en: 'A little smile', alt: '紫色のセーラー服で座り、首をかしげるDingDang' },
+  { n: 4, title: '物語の、その先へ。', en: 'Into her world', alt: 'ガラスの前に立つ、猫耳ベレー帽と紫色の衣装のDingDang全身' },
+  { n: 5, title: '光に包まれて。', en: 'Wrapped in light', alt: 'やわらかな光の中、横を見上げるDingDang' },
+];
+---
+<Base title="【非公式・選考課題】DingDang｜商品紹介デモ" description="澄んだ瞳、微笑みの少女。DingDangの世界を紹介する非公式の選考課題用特設ページ。" bodyClass="dingdang-page" themeColor="#1e1b25">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+  </Fragment>
+  <a class="dd-skip" href="#story">本文へスキップ</a>
+  <header class="dd-header" id="top">
+    <a href={base} aria-label="DOLK 掲載ページへ戻る">DOLK <span>掲載ページへ戻る ↗</span></a>
+    <span>非公式・選考課題</span>
+  </header>
+  <main class="dd-world">
+    <img class="dd-background" src={artwork('dingdang-background.webp')} width="1200" height="7257" alt="" aria-hidden="true" fetchpriority="high" />
+    <section class="dd-hero" aria-label="DingDang メインビジュアル">
+      <h1 class="dd-sr-only">1/4 DingDang — 澄んだ瞳、微笑みの少女。</h1>
+      <img class="dd-hero-layer dd-badge" src={artwork('dingdang-1.png')} width="239" height="233" alt="特別再販・数量限定抽選販売・応募締切10月2日（金）まで" />
+      <img class="dd-hero-layer dd-name" src={artwork('dingdang-name.png')} width="275" height="163" alt="1/4 DingDang" />
+      <img class="dd-hero-layer dd-tagline" src={artwork('dingdang-2.png')} width="537" height="172" alt="吸い込まれるような、澄んだ瞳、微笑みの少女。" />
+      <div class="dd-hero-action">
+        <a class="dd-button dd-button-light" href="#information" aria-describedby="dd-demo-note">抽選応募こちら <span aria-hidden="true">↗</span></a>
+        <p id="dd-demo-note">※ 掲載イメージです。実際のご応募はできません。</p>
+      </div>
+    </section>
+    <nav class="dd-nav" aria-label="ページ内ナビゲーション">
+      <a href="#story"><span>01</span> STORY</a>
+      <a href="#details"><span>02</span> DETAILS</a>
+      <a href="#gallery"><span>03</span> GALLERY</a>
+      <a href="#information"><span>04</span> INFORMATION</a>
+    </nav>
+
+    <section class="dd-story dd-section" id="story">
+      <div class="dd-section-heading dd-reveal">
+        <span class="dd-kicker">ASLEEP EIDOLON · 1/4 DOLL</span>
+        <p class="dd-script">A little gaze, a little magic.</p>
+        <h2>その微笑みに、<br />心ほどける。</h2>
+        <span class="dd-ornament" aria-hidden="true">✧</span>
+      </div>
+      <div class="dd-story-layout">
+        <figure class="dd-arch dd-reveal">
+          <img src={photo(1)} width="1400" height="2100" alt={photos[0].alt} loading="lazy" decoding="async" />
+          <figcaption>DingDang <span>— a portrait of innocence</span></figcaption>
+        </figure>
+        <div class="dd-story-copy dd-reveal">
+          <span class="dd-tiny-star" aria-hidden="true">✧</span>
+          <h3>瞳が出会う。<br />物語が、はじまる。</h3>
+          <p>ふと目が合った、その瞬間。<br />透明感のある瞳と、あどけない微笑みが、<br />いつもの景色を少しだけ特別にする。</p>
+          <p>猫耳のシルエットに、揺れるリボン。<br />愛らしさの中に、ほんの少しの気まぐれを。<br />DingDangと過ごす、あなただけの物語。</p>
+          <a class="dd-text-link" href="#gallery">その表情を、もっと近くで <span aria-hidden="true">↗</span></a>
+          <figure class="dd-story-inset"><img src={photo(3)} width="1279" height="1919" alt={photos[2].alt} loading="lazy" decoding="async" /><figcaption>A LITTLE SMILE, JUST FOR YOU.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="dd-details dd-section" id="details">
+      <div class="dd-section-heading dd-reveal">
+        <span class="dd-kicker">THE CHARM OF DINGDANG</span>
+        <h2 class="dd-english-heading">Delicate details</h2>
+        <p class="dd-subtitle">小さなディテールに、心を奪われて。</p>
+      </div>
+      <article class="dd-detail-row dd-reveal">
+        <figure class="dd-detail-image"><img src={photo(2)} width="1000" height="1500" alt={photos[1].alt} loading="lazy" decoding="async" /><figcaption>01 / EXPRESSION</figcaption></figure>
+        <div class="dd-detail-copy">
+          <span class="dd-detail-index" aria-hidden="true">01</span>
+          <span class="dd-kicker">EYES &amp; SMILE</span>
+          <h3>澄んだ瞳に、<br />そっと惹きこまれて。</h3>
+          <div class="dd-hairline" aria-hidden="true"></div>
+          <p>光を映す、すみれ色の瞳。<br />やわらかな頬と、微笑むような口元。<br />見る角度によって変わる表情に、<br />何度でも、新しい魅力を見つけて。</p>
+          <span class="dd-script">An unforgettable gaze.</span>
+        </div>
+      </article>
+      <article class="dd-detail-row dd-detail-reverse dd-reveal">
+        <figure class="dd-detail-image"><img src={photo(4)} width="1279" height="1919" alt={photos[3].alt} loading="lazy" decoding="async" /><figcaption>02 / SILHOUETTE</figcaption></figure>
+        <div class="dd-detail-copy">
+          <span class="dd-detail-index" aria-hidden="true">02</span>
+          <span class="dd-kicker">STYLE &amp; LITTLE THINGS</span>
+          <h3>甘さの中に、<br />小さないたずら心。</h3>
+          <div class="dd-hairline" aria-hidden="true"></div>
+          <p>ちょこんと覗く猫耳のベレー帽。<br />紫色のセーラーカラーと、黒いリボン。<br />軽やかに重なるフリルが、<br />何気ない仕草まで愛おしく彩ります。</p>
+          <span class="dd-script">A touch of playful charm.</span>
+        </div>
+      </article>
+      <p class="dd-photo-note">※ 写真はスタイリングイメージです。メインビジュアルとは衣装・ウィッグ等が異なります。セット内容は未確定です。</p>
+    </section>
+
+    <section class="dd-gallery dd-section" id="gallery">
+      <div class="dd-gallery-heading dd-reveal">
+        <div><span class="dd-kicker">MOMENTS TO TREASURE</span><h2 class="dd-english-heading">Portrait collection</h2><p class="dd-subtitle">どの瞬間も、あなたの宝物に。</p></div>
+        <span class="dd-gallery-hint">写真をタップして拡大 <span aria-hidden="true">＋</span></span>
+      </div>
+      <div class="dd-gallery-grid">
+        {photos.map((item, i) => <figure class={`dd-gallery-item dd-gallery-item-${i + 1} dd-reveal`}>
+          <button type="button" data-gallery={i} data-src={photo(item.n)} data-alt={item.alt} aria-label={`写真 ${i + 1} を拡大：${item.title}`} aria-haspopup="dialog">
+            <img src={photo(item.n)} width={item.n === 1 ? 1400 : item.n === 2 ? 1000 : 1279} height={item.n === 1 ? 2100 : item.n === 2 ? 1500 : 1919} alt={item.alt} loading="lazy" decoding="async" />
+            <span class="dd-gallery-expand" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><span>0{item.n}</span><span>{item.title}<em>{item.en}</em></span></figcaption>
+        </figure>)}
+      </div>
+    </section>
+
+    <section class="dd-information dd-section" id="information">
+      <div class="dd-section-heading dd-reveal"><span class="dd-kicker">A SPECIAL ENCOUNTER</span><h2 class="dd-english-heading">Welcome her home</h2><p class="dd-subtitle">DingDangをお迎えする、その日のために。</p><span class="dd-ornament" aria-hidden="true">✧</span></div>
+      <div class="dd-information-card dd-reveal" id="product">
+        <div class="dd-product-portrait"><img src={photo(5)} width="1279" height="1919" alt={photos[4].alt} loading="lazy" decoding="async" /><span>ASLEEP EIDOLON<br />DOLL COLLECTION</span></div>
+        <div class="dd-product-info">
+          <span class="dd-kicker">SPECIAL RE-RELEASE</span>
+          <h3>DingDang</h3><p class="dd-product-kana">ディンダン ／ 1/4 キャストドール</p>
+          <div class="dd-deadline"><span>数量限定 · 抽選販売</span><div><span>応募締切</span><strong>10.2</strong><span>（金）まで</span></div></div>
+          <dl><div><dt>ブランド</dt><dd>Asleep Eidolon</dd></div><div><dt>販売価格</dt><dd>詳細情報 準備中</dd></div><div><dt>セット内容</dt><dd>確認後にご案内いたします。</dd></div><div><dt>お届け時期</dt><dd>確認後にご案内いたします。</dd></div></dl>
+          <div class="dd-demo-message"><span>こちらは非公式のデザイン提案ページです。</span><p>記載の抽選日程はデザイン素材に基づく掲載イメージです。このページから実際の応募・購入はできません。</p></div>
+          <a class="dd-button dd-button-outline" href={base}>掲載ページへ戻る <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <div class="dd-closing dd-reveal"><span class="dd-tiny-star" aria-hidden="true">✧</span><p>あなたの日常に、小さな魔法を。</p><span class="dd-script">Always, a little wonder.</span></div>
+  </main>
+  <footer class="dd-footer">
+    <a class="dd-back-top" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a>
+    <p class="dd-footer-wordmark" aria-hidden="true">DingDang</p>
+    <div class="dd-footer-bottom"><a href={base}>DOLK <span>× Asleep Eidolon</span></a><p>非公式・選考課題 / Design proposal by Koetsu<br />画像・ロゴの権利は各権利者に帰属します。</p></div>
+  </footer>
+  <dialog class="dd-lightbox" aria-label="DingDang フォトギャラリー">
+    <button class="dd-lightbox-close" type="button" aria-label="拡大表示を閉じる" autofocus>閉じる <span aria-hidden="true">×</span></button>
+    <button class="dd-lightbox-prev" type="button" aria-label="前の写真">←</button>
+    <figure><img alt="" /><figcaption aria-live="polite"></figcaption></figure>
+    <button class="dd-lightbox-next" type="button" aria-label="次の写真">→</button>
+  </dialog>
+  <script src="../scripts/dingdang.ts"></script>
+</Base>
