@@ -36,7 +36,7 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     assert.equal($('.proposal-banner').length,2);
     assert.equal($('.proposal-caption').length,0,'Product banners should have no visible text overlay');
     assert.equal($('picture source').length,2);
-    assert.ok($('.hero-center').attr('src').endsWith('banner_img20260821190552.jpg'));
+    assert.ok($('.hero-center').attr('src').endsWith('dingdang-870x359.png'));
     assert.equal($('.thumbnail').length,6);
     assert.ok($('.thumbnail').first().hasClass('selected'));
     assert.ok($('.carousel-dots span').first().hasClass('active'));
