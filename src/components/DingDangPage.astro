@@ -24,8 +24,8 @@ const photos = [
     <span>非公式・選考課題</span>
   </header>
   <main class="dd-world">
-    <img class="dd-background" src={artwork('dingdang-background.webp')} width="1200" height="7257" alt="" aria-hidden="true" fetchpriority="high" />
     <section class="dd-hero" aria-label="DingDang メインビジュアル">
+      <img class="dd-background" src={artwork('dingdang-background.webp')} width="1200" height="7257" alt="" aria-hidden="true" fetchpriority="high" />
       <h1 class="dd-sr-only">1/4 DingDang — 澄んだ瞳、微笑みの少女。</h1>
       <img class="dd-hero-layer dd-badge" src={artwork('dingdang-1.svg')} width="238" height="233" alt="特別再販・数量限定抽選販売・応募締切10月2日（金）まで" />
       <img class="dd-hero-layer dd-name" src={artwork('dingdang-name.svg')} width="274" height="162" alt="1/4 DingDang" />
@@ -130,7 +130,7 @@ const photos = [
   </main>
   <footer class="dd-footer">
     <a class="dd-back-top" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a>
-    <p class="dd-footer-wordmark" aria-hidden="true">DingDang</p>
+    <img class="dd-footer-wordmark" src={artwork('dingdang-name.svg')} width="274" height="162" alt="1/4 DingDang" loading="lazy" decoding="async" />
     <div class="dd-footer-bottom"><a href={base}>DOLK <span>× Asleep Eidolon</span></a><p>非公式・選考課題 / Design proposal by Koetsu<br />画像・ロゴの権利は各権利者に帰属します。</p></div>
   </footer>
   <dialog class="dd-lightbox" aria-label="DingDang フォトギャラリー">

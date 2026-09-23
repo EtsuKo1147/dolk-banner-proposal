@@ -59,8 +59,10 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     if(route==='dingdang/'){
       assert.equal($('.dd-hero-layer').length,3,'DingDang hero must preserve the three independent text layers');
       assert.ok($('.dd-hero-layer').toArray().every(el=>$(el).attr('src').endsWith('.svg')),'All hero text layers must use SVG');
+      assert.equal($('img.dd-footer-wordmark').attr('src'),base+'images/dingdang-pdp/dingdang-name.svg','Footer must use the supplied DingDang SVG wordmark');
       assert.equal($('.dd-hero-action a').attr('href'),'#information','Demo CTA must only open page information');
       assert.equal($('.dd-background').length,1);
+      assert.equal($('.dd-hero > .dd-background').length,1,'Long background must stay inside the full-width hero to avoid overflowing the footer');
       assert.equal($('.dd-lightbox').length,1);
       assert.equal($('.lp-hero').length,0,'DingDang should not use the old shared product layout');
       assert.equal($('.dd-nav a').length,4);
