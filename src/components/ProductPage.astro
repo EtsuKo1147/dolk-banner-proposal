@@ -35,8 +35,8 @@ const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','S
         <div class="section-heading reveal"><span class="heading-jp">ドールについて</span><h2>ABOUT DOLL</h2><span class="heading-rule">◆</span></div>
         <p class="about-lead reveal">{p.about}</p>
         <div class="doll-note reveal"><h3>キャストドール<span>（球体関節人形）とは</span></h3><p>自由なポージングや着せ替えを楽しめる、球体関節を持つドール。お気に入りの衣装やウィッグを合わせることで、持つ人それぞれの世界が広がります。</p></div>
-        <div class="detail-row reveal"><div class="detail-photo"><PhotoSlider photos={p.detailPhotos[0].map(i=>p.photos[i])} label={`${p.name} HEAD & FACE`} /></div><div class="detail-copy"><span class="detail-number">01</span><span class="eyebrow">HEAD &amp; FACE</span><h3>{p.faceTitle}</h3><div class="small-rule"></div><p>{p.faceCopy}</p></div></div>
-        <div class="detail-row reverse reveal"><div class="detail-photo"><PhotoSlider photos={p.detailPhotos[1].map(i=>p.photos[i])} label={`${p.name} BODY & DRESS`} /></div><div class="detail-copy"><span class="detail-number">02</span><span class="eyebrow">BODY &amp; DRESS</span><h3>{p.dressTitle}</h3><div class="small-rule"></div><p>{p.dressCopy}</p></div></div>
+        <div class="detail-row reveal"><div class="detail-photo"><PhotoSlider photos={p.detailPhotos[0].map(i=>p.photos[i])} label={`${p.name} HEAD & FACE`} /></div><div class="detail-copy"><span class="eyebrow">HEAD &amp; FACE</span><h3>{p.faceTitle}</h3><div class="small-rule"></div><p>{p.faceCopy}</p></div></div>
+        <div class="detail-row reverse reveal"><div class="detail-photo"><PhotoSlider photos={p.detailPhotos[1].map(i=>p.photos[i])} label={`${p.name} BODY & DRESS`} /></div><div class="detail-copy"><span class="eyebrow">BODY &amp; DRESS</span><h3>{p.dressTitle}</h3><div class="small-rule"></div><p>{p.dressCopy}</p></div></div>
         <div class="pickup reveal"><span>PICK UP</span><p>{p.pickup}</p><div>まなざしの先に広がる、あなただけの物語。</div></div>
         <a class="ornate-button reveal" href="#product">商品情報を見る <span>›</span></a>
       </div>

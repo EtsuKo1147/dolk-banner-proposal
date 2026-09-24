@@ -39,10 +39,10 @@ const galleryPhotos = [
       </div>
     </section>
     <nav class="dd-nav" aria-label="ページ内ナビゲーション">
-      <a href="#story"><span>01</span> STORY</a>
-      <a href="#details"><span>02</span> DETAILS</a>
-      <a href="#gallery"><span>03</span> GALLERY</a>
-      <a href="#information"><span>04</span> INFORMATION</a>
+      <a href="#story">STORY</a>
+      <a href="#details">DETAILS</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#information">INFORMATION</a>
     </nav>
 
     <section class="dd-story dd-section" id="story">
@@ -75,9 +75,8 @@ const galleryPhotos = [
         <p class="dd-subtitle">小さなディテールに、心を奪われて。</p>
       </div>
       <article class="dd-detail-row dd-reveal">
-        <figure class="dd-detail-image"><DingDangPhoto src={photo('dd-2.webp')} width={1000} height={1500} alt="頬に手を添え、こちらを見つめるDingDangのアップ" /><figcaption>01 / EXPRESSION</figcaption></figure>
+        <figure class="dd-detail-image"><DingDangPhoto src={photo('dd-2.webp')} width={1000} height={1500} alt="頬に手を添え、こちらを見つめるDingDangのアップ" /><figcaption>EXPRESSION</figcaption></figure>
         <div class="dd-detail-copy">
-          <span class="dd-detail-index" aria-hidden="true">01</span>
           <span class="dd-kicker">EYES &amp; SMILE</span>
           <h3>澄んだ瞳に、<br />そっと惹きこまれて。</h3>
           <div class="dd-hairline" aria-hidden="true"></div>
@@ -86,9 +85,8 @@ const galleryPhotos = [
         </div>
       </article>
       <article class="dd-detail-row dd-detail-reverse dd-reveal">
-        <figure class="dd-detail-image"><DingDangPhoto src={photo('dd-4.webp')} width={1279} height={1919} alt="ガラスの前に立つ、猫耳ベレー帽と紫色の衣装のDingDang全身" /><figcaption>02 / SILHOUETTE</figcaption></figure>
+        <figure class="dd-detail-image"><DingDangPhoto src={photo('dd-4.webp')} width={1279} height={1919} alt="ガラスの前に立つ、猫耳ベレー帽と紫色の衣装のDingDang全身" /><figcaption>SILHOUETTE</figcaption></figure>
         <div class="dd-detail-copy">
-          <span class="dd-detail-index" aria-hidden="true">02</span>
           <span class="dd-kicker">STYLE &amp; LITTLE THINGS</span>
           <h3>甘さの中に、<br />小さないたずら心。</h3>
           <div class="dd-hairline" aria-hidden="true"></div>
@@ -110,7 +108,7 @@ const galleryPhotos = [
             <DingDangPhoto src={photo(item.file)} width={item.width} height={item.height} alt={item.alt} zoom={item.zoom} />
             <span class="dd-gallery-expand" aria-hidden="true">↗</span>
           </button>
-          <figcaption><span>0{i + 1}</span><span>{item.title}<em>{item.en}</em></span></figcaption>
+          <figcaption><span class="dd-gallery-caption">{item.title}<em>{item.en}</em></span></figcaption>
         </figure>)}
       </div>
     </section>

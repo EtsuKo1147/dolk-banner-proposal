@@ -65,7 +65,6 @@ button:focus-visible,a:focus-visible{outline:3px solid #24599f;outline-offset:5p
 .detail-photo{padding:10px;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:0 15px 45px #3f7fd31a}
 .detail-photo .photo-slider{aspect-ratio:4/5;border-radius:20px}
 .detail-copy{position:relative;padding:30px 0 30px 13%}
-.detail-number{font:italic 110px/1 'EB Garamond',serif;color:var(--blue);opacity:.16;position:absolute;top:-38px;right:0}
 .detail-copy .eyebrow{font:400 26px/1.4 'EB Garamond',serif;letter-spacing:.06em;color:var(--accent)}
 .detail-copy h3{white-space:pre-line;font-size:clamp(22px,2.2vw,32px);line-height:1.9;font-weight:500;margin:18px 0 28px}
 .small-rule{height:1px;width:80px;background:var(--line);margin-bottom:25px}
@@ -73,7 +72,6 @@ button:focus-visible,a:focus-visible{outline:3px solid #24599f;outline-offset:5p
 .detail-row.reverse{grid-template-columns:48% 52%}
 .detail-row.reverse .detail-photo{grid-column:2;grid-row:1}
 .detail-row.reverse .detail-copy{grid-column:1;grid-row:1;padding:30px 13% 30px 0}
-.detail-row.reverse .detail-number{right:15%}
 .pickup{width:min(750px,100%);margin:0 auto 60px;text-align:center;border-block:1px solid var(--line);padding:26px 20px}
 .pickup>span{font:italic 25px/1.5 'EB Garamond',serif;color:var(--accent)}
 .pickup>p{font-size:20px;margin:10px 0}
@@ -180,7 +178,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #24599f;outline-offset:5p
   .section-heading{margin:55px 0 25px}.section-heading h2{font-size:30px;letter-spacing:.015em}.section-heading .eyebrow{font-size:18px;margin-bottom:17px}.heading-jp{font-size:13px}.heading-rule{margin:16px 0}.heading-rule:before,.heading-rule:after{width:45px}
   .lp-introduction .section-heading h2{font-size:22px;line-height:1.85;letter-spacing:0}.intro-content{width:88%}.intro-composition{display:flex;flex-direction:column;margin-top:35px}.intro-photo{width:90%;padding:0}.intro-photo img{max-height:430px;border-width:6px}.intro-text{padding:35px 0 0;width:100%}.intro-text p{font-size:13px;line-height:2.5;margin-bottom:25px;letter-spacing:.03em}
   .about-content{padding-top:1px;padding-bottom:55px;width:88%}.about-lead{font-size:13px}.doll-note{display:block;margin:30px auto 65px;padding:24px;border-radius:20px}.doll-note h3{font-size:17px;margin-bottom:13px}.doll-note h3 span{font-size:11px}.doll-note p{font-size:12px}
-  .detail-row,.detail-row.reverse{display:flex;flex-direction:column;margin-bottom:60px}.detail-photo{width:100%;padding:6px;border-radius:24px}.detail-photo .photo-slider{border-radius:18px}.detail-copy,.detail-row.reverse .detail-copy{padding:35px 7px 0;width:100%}.detail-number{font-size:85px;top:10px;right:10px}.detail-row.reverse .detail-number{right:10px}.detail-copy .eyebrow{font-size:23px}.detail-copy h3{font-size:23px;line-height:1.8;margin:12px 0 18px}.small-rule{width:55px;margin-bottom:18px}.detail-copy>p{font-size:13px;line-height:2.25;letter-spacing:.03em}
+  .detail-row,.detail-row.reverse{display:flex;flex-direction:column;margin-bottom:60px}.detail-photo{width:100%;padding:6px;border-radius:24px}.detail-photo .photo-slider{border-radius:18px}.detail-copy,.detail-row.reverse .detail-copy{padding:35px 7px 0;width:100%}.detail-copy .eyebrow{font-size:23px}.detail-copy h3{font-size:23px;line-height:1.8;margin:12px 0 18px}.small-rule{width:55px;margin-bottom:18px}.detail-copy>p{font-size:13px;line-height:2.25;letter-spacing:.03em}
   .pickup{padding:20px 0;margin-bottom:30px}.pickup>span{font-size:23px}.pickup>p{font-size:16px}.pickup>div{font-size:11px}
   .lp-gallery{padding:1px 0 60px}.section-lead{font-size:13px;margin-bottom:30px}.gallery-grid{width:90%;grid-template-columns:1fr 1fr;gap:10px}.gallery-image{border-radius:16px}.gallery-image-1{grid-column:1/-1;grid-row:auto;aspect-ratio:1}.gallery-image-2,.gallery-image-3,.gallery-image-4,.gallery-image-5{grid-column:auto;aspect-ratio:3/4}.gallery-image>span{width:28px;height:28px;font-size:17px;bottom:8px;right:8px}
   .lp-sales{padding:1px 0 60px}.sales-side{display:none}.sales-content{width:88%}.sales-table h3{font-size:16px;margin-top:25px;padding:10px}.sales-table dl>div{grid-template-columns:1fr;gap:6px;padding:18px 5px;font-size:13px}.sales-table dt{font-weight:600}

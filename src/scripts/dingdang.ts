@@ -37,7 +37,7 @@ if (lightbox) {
     image.alt = item.dataset.alt!;
     photoWindow.style.setProperty('--photo-zoom', item.dataset.zoom ?? '1.08');
     photoWindow.style.setProperty('--photo-ratio', item.dataset.ratio ?? '0.6667');
-    caption.textContent = `${String(current + 1).padStart(2, '0')} / ${String(gallery.length).padStart(2, '0')} — ${item.dataset.alt}`;
+    caption.textContent = `${current + 1} / ${gallery.length} — ${item.dataset.alt}`;
   };
   gallery.forEach((button, index) => button.addEventListener('click', () => {
     trigger = button;

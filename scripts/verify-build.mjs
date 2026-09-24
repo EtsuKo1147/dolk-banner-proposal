@@ -73,6 +73,8 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     }
     console.log('PASS independent mobile layout and original square assets');
   }else{
+    assert.equal($('.detail-number,.dd-detail-index,.dd-nav a span').length,0,'Product pages must not render decorative section numbers');
+    assert.ok(!/(^|\s)0[1-9](\s|\/|$)/.test($('main').text()),'Remove zero-padded numbering from product headings, navigation and captions');
     assert.equal($('[data-gallery]').length,5);
     const photoSources=$('main img[src]').toArray().map(el=>$(el).attr('src')).filter(src=>src.includes(`/images/${route}`));
     if(route==='dingdang/'){
