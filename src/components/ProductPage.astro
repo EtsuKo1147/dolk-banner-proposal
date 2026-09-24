@@ -1,33 +1,32 @@
 ---
 import Base from '../layouts/Base.astro';
 import PhotoSlider from './PhotoSlider.astro';
-import '../styles/product.css';
+import '../styles/happy.css';
 import type { Product } from '../data/products';
 const { product: p } = Astro.props as {product:Product};
 const base = import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
 const photo = (i:number) => base + p.photos[i];
+const artwork = (name:string) => base + 'images/happy-pdp/' + name;
 const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','SALES INFORMATION'],['exhibition','EXHIBITION'],['product','PRODUCT']];
 ---
-<Base title={`【非公式・選考課題】${p.name}｜商品紹介デモ`} bodyClass={`product-page theme-${p.theme}`} description={`${p.name}の魅力を紹介する、非公式の選考課題用特設ページ。`}>
+<Base title={`【非公式・選考課題】${p.name}｜商品紹介デモ`} bodyClass={`product-page theme-${p.theme}`} themeColor="#3f7fd3" description={`${p.name}の魅力を紹介する、非公式の選考課題用特設ページ。`}>
   <Fragment slot="head"><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" /></Fragment>
-  <header class="lp-header"><a class="lp-logo" href={base} aria-label="DOLK 掲載ページへ戻る">DOLK</a><a class="back-to-store" href={base}>掲載ページへ <span>↗</span></a></header>
+  <header class="lp-header"><a class="lp-logo" href={base} aria-label="DOLK 掲載ページへ戻る">DOLK</a><span class="header-demo-label">選考課題・掲載イメージ</span><a class="back-to-store" href={base}>掲載ページへ <span>↗</span></a></header>
   <main>
     <section class="lp-hero" id="top" aria-label={`${p.name} メインビジュアル`}>
-      <div class="hero-atmosphere" style={`background-image:url('${photo(0)}')`}></div>
-      <PhotoSlider photos={p.heroPhotos.map(i=>p.photos[i])} positions={p.heroPhotos.map(i=>p.photoPositions[i])} label={`${p.name} メインビジュアル`} hero />
-      <div class="hero-shade"></div>
-      <div class="hero-emblem"><span>DOLK DOLL COLLECTION</span><b>{p.name}</b><i>{p.eyebrow}</i></div>
-      <div class="vertical-copy">{p.catchcopy.map((line,i)=><span style={`--delay:${.3+i*.3}s`}>{line}</span>)}</div>
-      <img class="hero-ornament" src={base+'images/site/main_bg01.png'} alt="" aria-hidden="true" />
-      <div class="hero-title"><span class="hero-title-jp">{p.kana}</span><h1>{p.name}</h1><p>キャストドール</p></div>
-      <a class="hero-scroll" href="#introduction"><span>SCROLL</span><span class="scroll-line"></span></a>
+      <img class="happy-background" src={artwork('happy-back.png')} width="1459" height="935" alt="DOLK × DOLLZONE、花に囲まれた青いドレスの Happy" fetchpriority="high" decoding="async" />
+      <h1 class="happy-title"><img class="happy-layer happy-name" src={artwork('happy-name.svg')} width="191" height="143" alt="Happy Fullset" /></h1>
+      <img class="happy-layer happy-choice" src={artwork('happy-choice.svg')} width="128" height="24" alt="数量限定｜抽選販売" />
+      <img class="happy-layer happy-word" src={artwork('happy-word.svg')} width="187" height="56" alt="花の妖精が届ける、小さなしあわせ。" />
+      <div class="happy-carriage"><img class="happy-layer happy-date" src={artwork('happy-date.svg')} width="173" height="137" alt="特別再販 2026年、応募締切 10月2日（金）" /></div>
     </section>
-    <section class="lp-introduction" id="introduction" style={`--intro-decor-left:url('${base}images/site/introduction_bg01.png');--intro-decor-right:url('${base}images/site/introduction_bg02.png')`}>
+    <nav class="happy-section-nav" aria-label="ページ内ナビゲーション"><a href="#introduction">INTRODUCTION</a><a href="#gallery">GALLERY</a><a href="#product">商品情報を見る <span>↓</span></a></nav>
+    <section class="lp-introduction" id="introduction">
       <div class="release-band"><span>キャストドール コレクション</span><strong>{p.name}</strong><span>あなただけの物語が、ここから。</span></div>
       <a class="ornate-button reveal" href="#product">商品情報を見る <span>›</span></a>
       <div class="intro-content">
         <div class="section-heading reveal"><span class="eyebrow">INTRODUCTION</span><h2>{p.introTitle.map(line=><Fragment>{line}<br /></Fragment>)}</h2><span class="heading-rule">◆</span></div>
-        <div class="intro-composition"><div class="intro-photo reveal"><img src={photo(3)} alt={`${p.name} の佇まい`} loading="lazy" /></div><div class="intro-text reveal">{p.introduction.map(text=><p>{text}</p>)}</div></div>
+        <div class="intro-composition"><div class="intro-photo reveal"><img src={photo(3)} width="600" height="753" alt={`${p.name} の佇まい`} loading="lazy" /></div><div class="intro-text reveal">{p.introduction.map(text=><p>{text}</p>)}</div></div>
       </div>
     </section>
     <section class="lp-about" id="about">

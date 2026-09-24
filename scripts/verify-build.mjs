@@ -71,6 +71,17 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
       assert.equal($('.dd-lightbox-photo > img').length,1,'Lightbox must also clip enlarged artwork');
     }else{
       assert.equal(new Set(photoSources).size,5,`${route}: expected exactly five unique product photos`);
+      assert.equal($('.lp-hero [data-slider]').length,0,'Happy hero must be a static composition, not a slideshow');
+      assert.equal($('.happy-background').attr('src'),base+'images/happy-pdp/happy-back.png');
+      assert.equal($('.happy-layer').length,4,'Happy must use all four independent SVG layers');
+      const happyLayers=$('.happy-layer').toArray().map(el=>$(el).attr('src')).sort();
+      assert.deepEqual(happyLayers,['happy-name','happy-choice','happy-word','happy-date'].map(name=>base+'images/happy-pdp/'+name+'.svg').sort());
+      assert.equal($('.happy-carriage > .happy-date').length,1,'Date carriage needs its own horizontal entrance layer');
+      assert.equal($('.happy-title').length,1);
+      assert.equal($('.hero-shade,.hero-emblem,.vertical-copy').length,0,'Do not retain the old navy and gold hero overlays');
+      assert.equal($('meta[name="theme-color"]').attr('content'),'#3f7fd3');
+      assert.equal($('.product-card').length,1);
+      assert.equal($('.happy-section-nav a').length,3);
     }
     if(route==='dingdang/'){
       assert.equal($('.dd-hero-layer').length,3,'DingDang hero must preserve the three independent text layers');
