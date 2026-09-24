@@ -45,6 +45,9 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     assert.ok($('.carousel-dots span').first().hasClass('active'));
     const mobile=JSON.parse(await fs.readFile('src/data/mobile-site.json','utf8'));
     assert.ok($('.mobile-hero').attr('src').includes(mobile.hero));
+    assert.equal($('.mobile-ticker-item').first().find('img').attr('src'),base+'images/banners/dingdang-1080x1080.png','Mobile hero caption must use the DingDang thumbnail');
+    assert.equal($('.mobile-ticker-item').first().find('p').text(),$('.thumbnail').first().find('p').text(),'Mobile and desktop DingDang announcements must match');
+    assert.ok(!$('.mobile-ticker-item').first().text().includes('スカーレット'),'Remove the previous product announcement below the mobile hero');
     assert.equal($('.mobile-topic img').length,mobile.topics.length);
     assert.equal($('.mobile-campaign-banners img').length,3);
     assert.equal($('.mobile-header').length,1);
