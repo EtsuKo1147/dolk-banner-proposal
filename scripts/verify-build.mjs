@@ -102,7 +102,8 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
       assert.equal($('meta[name="theme-color"]').attr('content'),'#3f7fd3');
       assert.equal($('.product-card').length,1);
       assert.equal($('.happy-section-nav a').length,3);
-      assert.equal($('.menu-close svg[viewBox="0 0 24 24"][aria-hidden="true"]').length,1,'Happy menu close icon must use a centered vector rather than font-dependent text');
+      assert.equal($('.menu-close svg[aria-hidden="true"]').length,1,'Happy menu close icon must use a centered vector rather than font-dependent text');
+      assert.equal($('.menu-close svg').attr('viewBox'),'0 0 24 24');
     }
     if(route==='dingdang/'){
       assert.equal($('.dd-hero-layer').length,3,'DingDang hero must preserve the three independent text layers');
