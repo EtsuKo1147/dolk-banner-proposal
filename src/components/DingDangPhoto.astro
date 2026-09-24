@@ -1,0 +1,13 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  zoom?: number;
+}
+const { src, alt, width, height, zoom = 1.08 } = Astro.props;
+---
+<span class="dd-photo-window" style={`--photo-zoom:${zoom};--photo-ratio:${width / height}`}>
+  <img src={src} width={width} height={height} alt={alt} loading="lazy" decoding="async" />
+</span>

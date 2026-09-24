@@ -26,6 +26,7 @@ const lightbox = document.querySelector<HTMLDialogElement>('.dd-lightbox');
 if (lightbox) {
   const image = lightbox.querySelector<HTMLImageElement>('img')!;
   const caption = lightbox.querySelector<HTMLElement>('figcaption')!;
+  const photoWindow = lightbox.querySelector<HTMLElement>('.dd-lightbox-photo')!;
   let current = 0;
   let trigger: HTMLButtonElement | null = null;
   let previousOverflow = '';
@@ -34,6 +35,8 @@ if (lightbox) {
     const item = gallery[current];
     image.src = item.dataset.src!;
     image.alt = item.dataset.alt!;
+    photoWindow.style.setProperty('--photo-zoom', item.dataset.zoom ?? '1.08');
+    photoWindow.style.setProperty('--photo-ratio', item.dataset.ratio ?? '0.6667');
     caption.textContent = `${String(current + 1).padStart(2, '0')} / ${String(gallery.length).padStart(2, '0')} — ${item.dataset.alt}`;
   };
   gallery.forEach((button, index) => button.addEventListener('click', () => {

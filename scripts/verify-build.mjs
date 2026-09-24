@@ -62,6 +62,13 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
       assert.equal(photoSources.length,10,'DingDang must have exactly ten photograph placements');
       assert.equal(new Set(photoSources).size,10,'Every DingDang photograph must appear exactly once');
       assert.deepEqual([...photoSources].sort(),expected.sort(),'Use all original five and all five newly supplied photographs');
+      assert.equal($('main .dd-photo-window > img').length,10,'Every product photo must use a clipped display window');
+      for(const button of $('[data-gallery]').toArray()){
+        const zoom=Number($(button).attr('data-zoom'));
+        assert.ok(zoom>=1.08,'Gallery lightbox must retain the display crop');
+        assert.ok($(button).find('.dd-photo-window').attr('style').includes(`--photo-zoom:${zoom}`));
+      }
+      assert.equal($('.dd-lightbox-photo > img').length,1,'Lightbox must also clip enlarged artwork');
     }else{
       assert.equal(new Set(photoSources).size,5,`${route}: expected exactly five unique product photos`);
     }
