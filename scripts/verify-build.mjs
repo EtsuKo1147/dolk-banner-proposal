@@ -31,23 +31,38 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
     assert.equal($('.store-header .header-demo-note').length,1);
     assert.equal($('.account-links,.utility-links').length,0);
     assert.equal($('.demo-notice').length,0,'No extra notice bar should change the page dimensions');
-    assert.equal($('a').length,4,'Homepage should link both desktop/mobile heroes and both product banners');
-    assert.equal($('.desktop-hero-link').attr('href'),base+'dingdang/');
-    assert.equal($('.desktop-hero-link > .hero-center').length,1,'Desktop hero artwork must be clickable');
-    assert.equal($('.mobile-hero-link').attr('href'),base+'dingdang/');
-    assert.equal($('.mobile-hero-link > .mobile-hero').length,1,'Mobile hero artwork must be clickable');
+    assert.equal($('[data-home-carousel]').length,2,'Provide a desktop and a mobile two-product carousel');
+    for(const variant of ['desktop','mobile']){
+      const carousel=$(`[data-home-carousel="${variant}"]`);
+      const realSlides=carousel.find('.home-carousel-slide:not([data-loop-copy])');
+      assert.equal(realSlides.length,2,'Only DingDang and Happy may be real carousel slides');
+      assert.deepEqual(realSlides.toArray().map(el=>$(el).attr('href')),[base+'dingdang/',base+'happy-fullset/']);
+      const size=variant==='desktop'?'870x359':'1080x1080';
+      const expected=['dingdang','happy-fullset'].map(slug=>base+`images/banners/${slug}-${size}.png`);
+      assert.deepEqual(realSlides.find('img').toArray().map(el=>$(el).attr('src')),expected);
+      assert.deepEqual([...new Set(carousel.find('.home-carousel-slide img').toArray().map(el=>$(el).attr('src')))].sort(),expected.sort(),'Loop copies must not introduce other campaigns');
+      assert.equal(carousel.find('.is-current').attr('href'),base+'dingdang/');
+      assert.equal(carousel.find('.home-carousel-slide[aria-hidden="false"]').length,1);
+      assert.equal(carousel.find('.carousel-dots button').length,2);
+      assert.equal(carousel.find('[data-carousel-pause]').length,1);
+    }
     assert.equal($('.proposal-banner').length,2);
     assert.equal($('.proposal-caption').length,0,'Product banners should have no visible text overlay');
     assert.equal($('picture source').length,2);
     assert.ok($('.hero-center').attr('src').endsWith('dingdang-870x359.png'));
     assert.equal($('.thumbnail').length,6);
     assert.ok($('.thumbnail').first().hasClass('selected'));
-    assert.ok($('.carousel-dots span').first().hasClass('active'));
+    assert.ok($('.carousel-dots button').first().hasClass('active'));
+    assert.equal($('.thumbnail').eq(2).find('.thumbnail-label').text(),'DOLLZONE');
+    assert.ok($('.thumbnail').eq(2).find('img').attr('src').endsWith('happy-fullset-870x359.png'));
+    assert.ok($('.thumbnail').eq(2).text().includes('Happy Fullset特別再販'));
     const mobile=JSON.parse(await fs.readFile('src/data/mobile-site.json','utf8'));
     assert.ok($('.mobile-hero').attr('src').includes(mobile.hero));
     assert.equal($('.mobile-ticker-item').first().find('img').attr('src'),base+'images/banners/dingdang-1080x1080.png','Mobile hero caption must use the DingDang thumbnail');
     assert.equal($('.mobile-ticker-item').first().find('p').text(),$('.thumbnail').first().find('p').text(),'Mobile and desktop DingDang announcements must match');
     assert.ok(!$('.mobile-ticker-item').first().text().includes('スカーレット'),'Remove the previous product announcement below the mobile hero');
+    assert.equal($('.mobile-ticker-item').length,2,'Mobile captions must rotate only the two requested products');
+    assert.equal($('.mobile-ticker-item').eq(1).find('p').text(),$('.thumbnail').eq(2).find('p').text());
     assert.equal($('.mobile-topic img').length,mobile.topics.length);
     assert.equal($('.mobile-campaign-banners img').length,3);
     assert.equal($('.mobile-header').length,1);
@@ -101,8 +116,8 @@ for(const route of ['', 'dingdang/', 'happy-fullset/']){
   }
   console.log('PASS',base+route,'assets, navigation, metadata, photo count');
 }
-for(const slug of ['dingdang','happy-fullset'])for(const [w,h] of [[730,135],[1080,1080]]){
+for(const slug of ['dingdang','happy-fullset'])for(const [w,h] of [[730,135],[870,359],[1080,1080]]){
   const meta=await sharp(`public/images/banners/${slug}-${w}x${h}.png`).metadata();
   assert.equal(meta.width,w);assert.equal(meta.height,h);
 }
-console.log('PASS all four banner dimensions');
+console.log('PASS all six banner dimensions');

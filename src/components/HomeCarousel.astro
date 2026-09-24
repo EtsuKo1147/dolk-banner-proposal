@@ -1,0 +1,46 @@
+---
+import site from '../data/site.json';
+import mobile from '../data/mobile-site.json';
+import '../styles/home-carousel.css';
+const { variant = 'desktop' } = Astro.props as { variant?: 'desktop' | 'mobile' };
+const isMobile = variant === 'mobile';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+const highlights = [
+  {slug:'dingdang', name:'DingDang', desktop:site.thumbnails[0].src, mobile:mobile.ticker[0].src, text:site.thumbnails[0].text},
+  {slug:'happy-fullset', name:'Happy Fullset', desktop:site.thumbnails[2].src, mobile:mobile.ticker[2].src, text:site.thumbnails[2].text},
+];
+// Two real slides (positions 2 and 3), with matching loop copies on either side.
+const sequence = [0, 1, 0, 1, 0, 1];
+---
+<div class={`home-carousel home-carousel--${variant}`} data-home-carousel={variant} role="region" aria-roledescription="カルーセル" aria-label="DingDang・Happy Fullset の特集">
+  <div class="home-carousel-viewport">
+    <div class="home-carousel-track">
+      {sequence.map((index,position)=>{
+        const item=highlights[index];
+        return <a class:list={['home-carousel-slide',`${variant}-hero-link`,{'is-current':position===2}]} href={base+item.slug+'/'} aria-label={`${item.name} の特設ページを見る`} aria-hidden={position!==2} tabindex={position===2?0:-1} inert={position!==2} data-highlight={index} data-slide-position={position} data-loop-copy={position!==2&&position!==3 ? 'true' : undefined}>
+          <img class={isMobile?'mobile-hero':'hero-center'} src={base+(isMobile?item.mobile:item.desktop)} width={isMobile?1080:870} height={isMobile?1080:359} alt={`${item.name} バナー`} fetchpriority={position===2?'high':'auto'} decoding="async" />
+        </a>;
+      })}
+    </div>
+    <button class="home-carousel-arrow home-carousel-prev" type="button" data-carousel-prev aria-label="前のバナー" disabled><span aria-hidden="true">‹</span></button>
+    <button class="home-carousel-arrow home-carousel-next" type="button" data-carousel-next aria-label="次のバナー" disabled><span aria-hidden="true">›</span></button>
+  </div>
+  <div class="home-carousel-controls">
+    <div class="carousel-dots">{highlights.map((item,i)=><button type="button" data-carousel-select={i} class:list={{active:i===0}} aria-label={`${item.name} のバナーを表示`} aria-pressed={i===0} disabled />)}</div>
+    <button class="home-carousel-pause" type="button" data-carousel-pause aria-label="自動切り替えを停止" aria-pressed="false" disabled>Ⅱ</button>
+  </div>
+  {isMobile ? <div class="mobile-ticker">
+    {highlights.map((item,i)=><div class="mobile-ticker-item" data-carousel-caption={i} hidden={i!==0}><img src={base+item.mobile} width="74" height="74" alt="" /><p>{item.text}</p></div>)}
+    <button class="mobile-ticker-next" type="button" data-carousel-next aria-label="次のバナー" disabled>{highlights.map((item,i)=><img src={base+item.mobile} width="74" height="74" alt={item.name} data-carousel-preview={i} hidden={i===0} />)}</button>
+  </div> : <div class="thumbnail-strip">
+    <button class="static-arrow" type="button" data-carousel-prev aria-label="前のバナー" disabled>‹</button>
+    {site.thumbnails.map((item,i)=>{
+      const index=i===0?0:i===2?1:undefined;
+      const Tag=index===undefined?'article':'button';
+      return <Tag class:list={['thumbnail',{'selected':i===0,'thumbnail-control':index!==undefined}]} type={index!==undefined?'button':undefined} data-carousel-select={index} aria-label={index!==undefined?`${highlights[index].name} のバナーを表示`:undefined} aria-pressed={index!==undefined?i===0:undefined} disabled={index!==undefined?true:undefined}><span class="thumbnail-label">{item.category}</span><img src={base+item.src} width="870" height="359" alt="" /><p>{item.text}</p></Tag>;
+    })}
+    <button class="static-arrow" type="button" data-carousel-next aria-label="次のバナー" disabled>›</button>
+  </div>}
+  <span class="carousel-status" data-carousel-status aria-live="polite" aria-atomic="true"></span>
+</div>
+<script src="../scripts/home-carousel.ts"></script>
