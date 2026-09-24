@@ -62,7 +62,7 @@ const navigation=[['about','ABOUT DOLL'],['gallery','GALLERY'],['information','S
   </main>
   <footer class="lp-footer"><a class="lp-logo" href={base}>DOLK</a><p>{p.name} キャストドール<br />特設ページ・掲載イメージ</p><nav aria-label="フッターナビゲーション">{navigation.map(([id,label])=><a href={'#'+id}>{label}</a>)}</nav><p class="lp-disclaimer">選考課題として制作した非公式の掲載イメージです。<br />商品説明・販売情報は仮の内容です。画像・ロゴの権利は各権利者に帰属します。</p></footer>
   <nav class="mobile-fixed-nav" aria-label="ページ内ナビゲーション"><a href={base}>DOLK</a><a href="#gallery">GALLERY</a><a href="#product">商品情報</a><button type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>☰</button></nav>
-  <dialog class="mobile-menu" id="mobile-menu"><button type="button" class="menu-close" aria-label="メニューを閉じる">×</button><span class="menu-brand">{p.name}</span><nav>{navigation.map(([id,label])=><a href={'#'+id}>{label}</a>)}<a href={base}>掲載ページへ戻る</a></nav></dialog>
+  <dialog class="mobile-menu" id="mobile-menu"><button type="button" class="menu-close" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M6 6 18 18M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg></button><span class="menu-brand">{p.name}</span><nav>{navigation.map(([id,label])=><a href={'#'+id}>{label}</a>)}<a href={base}>掲載ページへ戻る</a></nav></dialog>
   <dialog class="lightbox" aria-label="写真を拡大表示"><button class="lightbox-close" aria-label="拡大表示を閉じる">×</button><button class="lightbox-prev" aria-label="前の写真">‹</button><figure><img alt="" /><figcaption aria-live="polite"></figcaption></figure><button class="lightbox-next" aria-label="次の写真">›</button></dialog>
   <script src="../scripts/product.ts"></script>
 </Base>

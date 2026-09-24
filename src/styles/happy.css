@@ -157,6 +157,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #24599f;outline-offset:5p
 .lightbox-prev{left:10px;top:45%}
 .lightbox-next{right:10px;top:45%}
 .mobile-menu{background:var(--deep);color:var(--ink);border:0}
+.menu-close{display:grid;place-items:center;padding:0;line-height:1;appearance:none;-webkit-appearance:none}
+.menu-close svg{display:block;width:24px;height:24px}
 .motion-enabled .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s ease,transform .85s ease}
 .motion-enabled .reveal.revealed{opacity:1;transform:translateY(0)}
 @keyframes happy-fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
